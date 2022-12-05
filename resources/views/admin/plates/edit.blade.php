@@ -25,7 +25,9 @@
 
         <label for="available">Disponibilità piatto:</label>
         <input type="radio" name="available" value="1" @if ($plate->available) checked @endif>
+        <label for="1">Disponibile</label>
         <input type="radio" name="available" value="0" @if (!$plate->available) checked @endif>
+        <label for="0">Non disponibile</label>
 
     </div>
 
