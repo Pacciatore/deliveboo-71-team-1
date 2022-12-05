@@ -23,3 +23,9 @@
 @else
     <p>Piatto non disponibile</p>
 @endif
+
+
+<div class="nav-buttons">
+    <a href="{{ route('admin.plates.index') }}">Back to index</a>
+    <a href="{{ route('admin.plates.edit', $plate->id) }}">Edit</a>
+</div>

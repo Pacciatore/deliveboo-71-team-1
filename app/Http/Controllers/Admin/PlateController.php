@@ -62,6 +62,7 @@ class PlateController extends Controller
     public function edit(Plate $plate)
     {
         //
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -74,6 +75,12 @@ class PlateController extends Controller
     public function update(Request $request, Plate $plate)
     {
         //
+        $this->validatePlate($request);
+
+        $form_data = $request->all();
+        $plate->update($form_data);
+
+        return redirect()->route('admin.plates.show', $plate->id);
     }
 
     /**
