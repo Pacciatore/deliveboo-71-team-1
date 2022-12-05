@@ -86,4 +86,19 @@ class PlateController extends Controller
     {
         //
     }
+
+    private function validatePlate(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:25',
+            'description' => 'min:5',
+            'imgPath' => 'nullable',
+            'price' => 'min:0|max:99.99',
+            'available' => 'required'
+        ], [
+            'required' => ':attribute is mandatory',
+            'min' => ':attribute should be at least :min chars',
+            'max' => ':attribute should have max length :max chars',
+        ]);
+    }
 }
