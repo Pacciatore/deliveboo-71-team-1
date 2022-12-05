@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Antonello
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -49,7 +51,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 - [1Forge](https://1forge.com)
 - [TECPRESSO](https://tecpresso.co.jp/)
 - [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+- [WebL&#39;Agence](https://weblagence.com/)
 - [Invoice Ninja](https://www.invoiceninja.com)
 - [iMi digital](https://www.imi-digital.de/)
 - [Earthlink](https://www.earthlink.ro/)
