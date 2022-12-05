@@ -28,6 +28,7 @@ class PlateController extends Controller
     public function create()
     {
         //
+        return view('admin.plates.create');
     }
 
     /**
@@ -39,6 +40,15 @@ class PlateController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validatePlate($request);
+
+        $form_data = $request->all();
+
+        $plate = new Plate();
+        $plate->fill($form_data);
+        $plate->save();
+
+        return redirect()->route('admin.plates.show', $plate->id);
     }
 
     /**
