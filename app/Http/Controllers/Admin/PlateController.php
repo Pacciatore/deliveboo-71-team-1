@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Plate;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PlateController extends Controller
@@ -15,6 +16,8 @@ class PlateController extends Controller
     public function index()
     {
         //
+        $plates = Plate::all();
+        return view('admin.plates.index', compact('plates'));
     }
 
     /**
