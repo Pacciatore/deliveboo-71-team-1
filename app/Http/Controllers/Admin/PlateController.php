@@ -110,7 +110,7 @@ class PlateController extends Controller
             'name' => 'required|max:25',
             'description' => 'min:5',
             'imgPath' => 'nullable',
-            'price' => 'min:0|max:99.99',
+            'price' => 'required|min:0|max:99.99',
             'available' => 'required'
         ], [
             'required' => ':attribute is mandatory',
