@@ -50,6 +50,7 @@ class PlateController extends Controller
     public function show(Plate $plate)
     {
         //
+        return view('admin.plates.show', compact('plate'));
     }
 
     /**
