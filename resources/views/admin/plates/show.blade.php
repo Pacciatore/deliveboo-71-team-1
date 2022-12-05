@@ -28,4 +28,16 @@
 <div class="nav-buttons">
     <a href="{{ route('admin.plates.index') }}">Back to index</a>
     <a href="{{ route('admin.plates.edit', $plate->id) }}">Edit</a>
+
+    {{-- Pulsante per l'eliminazione di un piatto --}}
+    <div class="mt-2">
+        <form onsubmit="return confirm('Are you sure?')" action="{{ route('admin.plates.destroy', $plate->id) }}"
+            method="POST">
+            @csrf
+            @method('DELETE')
+
+            <input class="btn-danger" type="submit" value="Delete Plate">
+        </form>
+    </div>
+
 </div>
