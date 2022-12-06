@@ -29,7 +29,7 @@
         @endif
 
 
-        <div class="nav-buttons d-flex align-items-center justify-content-end g-2">
+        <div class="nav-buttons">
 
             <a class="btn boo-btn-cyan d-flex align-items-center" href="{{ route('admin.plates.index') }}">Back to
                 index</a>

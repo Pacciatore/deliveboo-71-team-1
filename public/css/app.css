@@ -10932,13 +10932,32 @@ a.text-dark:focus {
   }
 }
 
+.navbar {
+  background-color: #FFEEAD;
+}
+
+.navbar .navbar-brand {
+  color: #D9534F;
+  transition: color 0.25s;
+}
+
+.navbar .navbar-brand:hover {
+  color: #FFAD60;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .boo-btn-orange {
   background-color: #FFAD60;
   color: white;
 }
 
 .boo-btn-orange:hover {
-  box-shadow: inset 0 0 10px -5px black;
+  background-color: #e99e58;
   color: white;
 }
 
@@ -10948,7 +10967,7 @@ a.text-dark:focus {
 }
 
 .boo-btn-green:hover {
-  box-shadow: inset 0 0 10px -5px black;
+  background-color: #66b08d;
   color: white;
 }
 
@@ -10958,12 +10977,17 @@ a.text-dark:focus {
 }
 
 .boo-btn-cyan:hover {
-  box-shadow: inset 0 0 10px -5px black;
+  background-color: #5892c1;
   color: white;
 }
 
 .btn a:hover {
   text-decoration: none;
+}
+
+.is-invalid {
+  border: 1px solid #D9534F;
+  border-radius: 5px;
 }
 
 #plates-index h1 {
@@ -10976,7 +11000,7 @@ a.text-dark:focus {
 }
 
 #plates-index a:not(.btn):hover:not(#plates-index a:not(.btn).btn) {
-  color: #D9534F;
+  color: #96CEB4;
 }
 
 #show-plate h1 {
@@ -10997,5 +11021,9 @@ a.text-dark:focus {
 
 #show-plate .not-available:hover {
   cursor: default;
+}
+
+#edit-plate h1 {
+  color: #6cb2eb;
 }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Plate;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class PlateController extends Controller
@@ -88,6 +89,16 @@ class PlateController extends Controller
         $this->validatePlate($request);
 
         $form_data = $request->all();
+
+        if (array_key_exists('image', $form_data)) {
+
+            if ($plate->imgPath) {
+                Storage::delete($plate->imgPath);
+            }
+            $imgPath = Storage::put('plate_images', $form_data['image']);
+            $form_data['imgPath'] = $imgPath;
+        }
+
         $plate->update($form_data);
 
         return redirect()->route('admin.plates.show', $plate->id);

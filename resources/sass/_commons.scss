@@ -1,9 +1,33 @@
+//#region Navbar + nav-buttons
+.navbar {
+    background-color: $boo-yellow;
+
+    .navbar-brand {
+        color: $boo-red;
+        transition: color $boo-short;
+
+        &:hover {
+            color: $boo-orange;
+        }
+    }
+
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+//#endregion Navbar
+
+//#region Site Buttons
 .boo-btn-orange {
     background-color: $boo-orange;
     color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px black;
+        background-color: $boo-orange-hover;
         color: white;
     }
 }
@@ -13,7 +37,7 @@
     color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px black;
+        background-color: $boo-green-hover;
         color: white;
     }
 }
@@ -23,7 +47,7 @@
     color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px black;
+        background-color: $cyan-hover;
         color: white;
     }
 }
@@ -34,4 +58,11 @@
             text-decoration: none;
         }
     }
+}
+
+//#endregion Site Buttons
+
+.is-invalid {
+    border: 1px solid $boo-red;
+    border-radius: 5px;
 }
