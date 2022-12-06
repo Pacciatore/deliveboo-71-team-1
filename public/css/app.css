@@ -10951,7 +10951,7 @@ a.text-dark:focus {
 }
 
 .boo-btn-orange:hover {
-  box-shadow: inset 0 0 10px -5px black;
+  background-color: #e99e58;
   color: white;
 }
 
@@ -10961,7 +10961,7 @@ a.text-dark:focus {
 }
 
 .boo-btn-green:hover {
-  box-shadow: inset 0 0 10px -5px black;
+  background-color: #66b08d;
   color: white;
 }
 
@@ -10971,7 +10971,7 @@ a.text-dark:focus {
 }
 
 .boo-btn-cyan:hover {
-  box-shadow: inset 0 0 10px -5px black;
+  background-color: #5892c1;
   color: white;
 }
 

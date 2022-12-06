@@ -21,7 +21,7 @@
     color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px black;
+        background-color: $boo-orange-hover;
         color: white;
     }
 }
@@ -31,7 +31,7 @@
     color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px black;
+        background-color: $boo-green-hover;
         color: white;
     }
 }
@@ -41,7 +41,7 @@
     color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px black;
+        background-color: $cyan-hover;
         color: white;
     }
 }
