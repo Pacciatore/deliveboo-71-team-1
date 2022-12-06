@@ -1,4 +1,4 @@
-//#region Navbar
+//#region Navbar + nav-buttons
 .navbar {
     background-color: $boo-yellow;
 
@@ -11,6 +11,12 @@
         }
     }
 
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 //#endregion Navbar
