@@ -59,7 +59,23 @@
 
             </div>
 
-            {{-- TODO: Caricamento immagine --}}
+            {{-- Immagine del post --}}
+            <div>
+                <div @error('image') class="is-invalid" @enderror>
+                    <label for="image">Carica immagine: </label>
+                    <input type="file" name="image">
+                </div>
+                @if ($plate->imgPath)
+                    <div class="img-container">
+                        <img class="img-fluid" src="{{ asset('storage/' . $plate->imgPath) }}" alt="{{ $plate->name }}">
+                    </div>
+                @endif
+
+                @error('image')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
+
+            </div>
 
             <div class="nav-buttons">
                 {{-- Invio form --}}
