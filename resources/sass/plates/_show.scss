@@ -1,0 +1,23 @@
+#show-plate {
+
+    h1 {
+        color: $boo-green;
+    }
+
+    .available {
+        color: #28a745;
+
+        &:hover {
+            cursor: default;
+        }
+    }
+
+    .not-available {
+        color: #dc3545;
+
+        &:hover {
+            cursor: default;
+        }
+    }
+
+}

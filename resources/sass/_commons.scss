@@ -1,8 +1,30 @@
 .boo-btn-orange {
     background-color: $boo-orange;
+    color: white;
 
     &:hover {
-        box-shadow: inset 0 0 10px -5px;
+        box-shadow: inset 0 0 10px -5px black;
+        color: white;
+    }
+}
+
+.boo-btn-green {
+    background-color: $boo-green;
+    color: white;
+
+    &:hover {
+        box-shadow: inset 0 0 10px -5px black;
+        color: white;
+    }
+}
+
+.boo-btn-cyan {
+    background-color: $cyan;
+    color: white;
+
+    &:hover {
+        box-shadow: inset 0 0 10px -5px black;
+        color: white;
     }
 }
 

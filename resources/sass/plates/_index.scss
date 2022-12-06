@@ -8,7 +8,7 @@
 
 
     // Links
-    a {
+    a:not(.btn) {
         color: inherit;
 
         &:hover:not(&.btn) {
