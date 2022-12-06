@@ -60,11 +60,14 @@
             </div>
 
             {{-- Immagine del post --}}
-            <div>
+            <div class="col-5 my-2 py-2 @error('price') is-invalid @enderror">
+
                 <div @error('image') class="is-invalid" @enderror>
-                    <label for="image">Carica immagine: </label>
+                    <label for="image">
+                        Carica immagine: </label>
                     <input type="file" name="image">
                 </div>
+
                 @if ($plate->imgPath)
                     <div class="img-container">
                         <img class="img-fluid" src="{{ asset('storage/' . $plate->imgPath) }}" alt="{{ $plate->name }}">
