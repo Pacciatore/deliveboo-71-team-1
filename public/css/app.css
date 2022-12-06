@@ -10945,6 +10945,12 @@ a.text-dark:focus {
   color: #FFAD60;
 }
 
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .boo-btn-orange {
   background-color: #FFAD60;
   color: white;
@@ -10979,6 +10985,11 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
+.is-invalid {
+  border: 1px solid #D9534F;
+  border-radius: 5px;
+}
+
 #plates-index h1 {
   color: #D9534F;
   cursor: default;
@@ -11010,5 +11021,9 @@ a.text-dark:focus {
 
 #show-plate .not-available:hover {
   cursor: default;
+}
+
+#edit-plate h1 {
+  color: #6cb2eb;
 }
 

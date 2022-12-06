@@ -61,3 +61,8 @@
 }
 
 //#endregion Site Buttons
+
+.is-invalid {
+    border: 1px solid $boo-red;
+    border-radius: 5px;
+}
