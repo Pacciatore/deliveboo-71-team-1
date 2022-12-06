@@ -1,0 +1,19 @@
+#plates-index {
+
+    // Titles
+    h1 {
+        color: $boo-red;
+        cursor: default;
+    }
+
+
+    // Links
+    a {
+        color: inherit;
+
+        &:hover:not(&.btn) {
+            color: $boo-red;
+        }
+    }
+
+}
