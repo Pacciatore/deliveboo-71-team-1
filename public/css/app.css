@@ -10932,6 +10932,19 @@ a.text-dark:focus {
   }
 }
 
+.navbar {
+  background-color: #FFEEAD;
+}
+
+.navbar .navbar-brand {
+  color: #D9534F;
+  transition: color 0.25s;
+}
+
+.navbar .navbar-brand:hover {
+  color: #FFAD60;
+}
+
 .boo-btn-orange {
   background-color: #FFAD60;
   color: white;

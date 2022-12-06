@@ -1,3 +1,21 @@
+//#region Navbar
+.navbar {
+    background-color: $boo-yellow;
+
+    .navbar-brand {
+        color: $boo-red;
+        transition: color $boo-short;
+
+        &:hover {
+            color: $boo-orange;
+        }
+    }
+
+}
+
+//#endregion Navbar
+
+//#region Site Buttons
 .boo-btn-orange {
     background-color: $boo-orange;
     color: white;
@@ -35,3 +53,5 @@
         }
     }
 }
+
+//#endregion Site Buttons
