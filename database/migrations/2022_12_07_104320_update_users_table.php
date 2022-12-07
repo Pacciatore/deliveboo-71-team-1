@@ -15,6 +15,11 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->string('activity_name', 50);
+            $table->string('address', 80);       
+            $table->bigInteger('vat_number')->unsigned()->unique(); //partita iva
+            $table->string('type')->nullable();
+            $table->string('slug')->unique();
         });
     }
 
@@ -27,6 +32,13 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn([
+                'activity_name', 
+                'address', 
+                'vat_number', 
+                'type', 
+                'slug'
+            ]);
         });
     }
 }
