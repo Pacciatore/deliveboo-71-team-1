@@ -7,8 +7,8 @@
 
         {{-- Mostra l'immagine se presente --}}
         @if ($plate->imgPath)
-            <div class="img-container">
-                <img src="{{ asset('storage/' . $plate->imgPath) }}" alt="{{ $plate->name }}">
+            <div class="img-container col-md-6 px-0">
+                <img class="img-fluid" src="{{ asset('storage/' . $plate->imgPath) }}" alt="{{ $plate->name }}">
             </div>
         @endif
 
