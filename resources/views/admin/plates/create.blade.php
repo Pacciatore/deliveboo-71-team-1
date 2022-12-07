@@ -52,16 +52,19 @@
 
             </div>
 
-            {{-- TODO: Caricamento immagine --}}
+            {{-- Immagine del piatto --}}
+            <div class="col-10 col-md-6 my-2 py-2 @error('image') is-invalid @enderror">
 
-            {{-- Invio form --}}
-            <div>
-                <input type="submit" value="Crea">
+                <div @error('image') class="is-invalid" @enderror>
+                    <label for="image">
+                        Carica immagine: </label>
+                    <input type="file" name="image">
             </div>
 
-            {{-- Ritorno alla vista dei post --}}
-            <div>
-                <a href="{{ route('admin.plates.index') }}">Back to index</a>
+                @error('image')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
+
             </div>
 
 

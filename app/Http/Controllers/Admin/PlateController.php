@@ -45,6 +45,12 @@ class PlateController extends Controller
 
         $form_data = $request->all();
 
+        if (array_key_exists('image', $form_data)) {
+            $imgPath = Storage::put('plate_images', $form_data['image']);
+            $form_data['imgPath'] = $imgPath;
+        }
+
+
         $plate = new Plate();
         $plate->fill($form_data);
         $plate->save();
