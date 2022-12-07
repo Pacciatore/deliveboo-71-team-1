@@ -3,7 +3,7 @@
 @section('content')
     <div id="plates-index" class="container">
 
-        <div class="top d-flex justify-content-between">
+        <div class="top d-flex justify-content-between flex-wrap">
 
             <h1>Elenco piatti</h1>
 

@@ -1,41 +1,39 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="container">
+    <div id="create-plate" class="container">
         <h1>Aggiungi piatto al ristorante</h1>
-
-        @if ($errors->any())
-            <div class="row">
-                <div class="col-12 bg-danger">
-                    Ci sono errori...
-                </div>
-            </div>
-        @endif
-
 
         <form action="{{ route('admin.plates.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             {{-- Nome piatto --}}
-            <div @error('name') class="is-invalid" @enderror>
+            <div class="col-10 col-md-6 my-2 py-2 @error('name') is-invalid @enderror">
 
                 <label for="name">Nome piatto:</label>
                 <input type="text" name="name" value="{{ old('name', '') }}">
 
+                @error('name')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
+
             </div>
 
             {{-- Descrizione piatto --}}
-            <div @error('description') class="is-invalid" @enderror>
+            <div class="col-10 col-md-6 my-2 py-2 @error('description') is-invalid @enderror">
 
-                <label for="description">Descrizione/Ingredienti piatto:</label>
+                <label class="align-top" for="description">Descrizione/Ingredienti piatto:</label>
                 <textarea name="description" required cols="30" rows="10">{{ old('description', '') }}</textarea>
+
+                @error('description')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
 
             </div>
 
             {{-- Disponibilità piatto --}}
-            <div @error('available') class="is-invalid" @enderror>
+            <div class="col-10 col-md-6 my-2 py-2">
 
-                <label for="available">Disponibilità piatto:</label>
                 <input type="radio" name="available" value="1" checked>
                 <label for="1">Disponibile</label>
                 <input type="radio" name="available" value="0">
@@ -44,27 +42,40 @@
             </div>
 
             {{-- Prezzo del piatto --}}
-            <div @error('price') class="is-invalid" @enderror>
+            <div class="col-10 col-md-6 my-2 py-2 @error('price') is-invalid @enderror">
 
                 <label for="price">Prezzo piatto:</label>
                 <input type="number" name="price" step=".01" min="0" max="99.99"
                     value="{{ old('price', '') }}">
 
+                @error('price')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
+
             </div>
 
-            {{-- TODO: Caricamento immagine --}}
+            {{-- Immagine del piatto --}}
+            <div class="col-10 col-md-6 my-2 py-2 @error('image') is-invalid @enderror">
 
-            {{-- Invio form --}}
-            <div>
-                <input type="submit" value="Crea">
+                <div @error('image') class="is-invalid" @enderror>
+                    <label for="image">
+                        Carica immagine: </label>
+                    <input type="file" name="image">
+                </div>
+
+                @error('image')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
+
             </div>
 
-            {{-- Ritorno alla vista dei post --}}
-            <div>
-                <a href="{{ route('admin.plates.index') }}">Back to index</a>
+            <div class="nav-buttons">
+                {{-- Invio form --}}
+                <input class="btn boo-btn-green mr-2" type="submit" value="Crea">
+
+                {{-- Ritorno alla vista dei post --}}
+                <a class="btn boo-btn-cyan" href="{{ route('admin.plates.index') }}">Torna all'indice</a>
             </div>
-
-
 
         </form>
     </div>
