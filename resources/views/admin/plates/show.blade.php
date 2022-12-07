@@ -29,23 +29,24 @@
         @endif
 
 
-        <div class="nav-buttons">
-
-            <a class="btn boo-btn-cyan d-flex align-items-center" href="{{ route('admin.plates.index') }}">Back to
-                index</a>
-
-            <a class="btn boo-btn-green d-flex align-items-center mx-2"
-                href="{{ route('admin.plates.edit', $plate->id) }}">Edit</a>
+        <div class="nav-buttons flex-wrap justify-content-between">
 
             {{-- Pulsante per l'eliminazione di un piatto --}}
-            <div>
-                <form onsubmit="return confirm('Are you sure?')" action="{{ route('admin.plates.destroy', $plate->id) }}"
-                    method="POST">
-                    @csrf
-                    @method('DELETE')
+            <form onsubmit="return confirm('Are you sure?')" action="{{ route('admin.plates.destroy', $plate->id) }}"
+                method="POST">
+                @csrf
+                @method('DELETE')
 
-                    <input class="btn btn-danger" type="submit" value="Delete Plate">
-                </form>
+                <input class="btn btn-danger" type="submit" value="Elimina piatto">
+            </form>
+
+            <div class="d-flex">
+                {{-- Pulsante per la modifica --}}
+                <a class="btn boo-btn-green d-flex align-items-center mx-2"
+                    href="{{ route('admin.plates.edit', $plate->id) }}">Modifica</a>
+
+                {{-- Pulsante per tornare indietro --}}
+                <a class="btn boo-btn-cyan d-flex align-items-center" href="{{ route('admin.plates.index') }}">Indietro</a>
             </div>
 
         </div>
