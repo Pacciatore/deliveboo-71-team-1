@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="edit-plate" class="container">
-        <h1>Edit {{ $plate->name }}</h1>
+        <h1>Modifica {{ $plate->name }}</h1>
 
         <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype="multipart/form-data"
             class="d-flex flex-column">
@@ -24,7 +24,7 @@
             {{-- Descrizione piatto --}}
             <div class="col-10 col-md-6 my-2 py-2 @error('description') is-invalid @enderror">
 
-                <label for="description">Descrizione/Ingredienti piatto:</label>
+                <label class="align-top" for="description">Descrizione/Ingredienti piatto:</label>
                 <textarea name="description" required cols="30" rows="10">{{ old('description', $plate->description) }}</textarea>
 
                 @error('description')
@@ -34,7 +34,7 @@
             </div>
 
             {{-- Disponibilità piatto --}}
-            <div class="col-10 col-md-6 my-2 py-2 @error('available') is-invalid @enderror">
+            <div class="col-10 col-md-6 my-2 py-2">
 
                 <input type="radio" name="available" value="1" @if ($plate->available) checked @endif>
                 <label for="1">Disponibile</label>
@@ -58,8 +58,8 @@
 
             </div>
 
-            {{-- Immagine del post --}}
-            <div class="col-10 col-md-6 my-2 py-2 @error('price') is-invalid @enderror">
+            {{-- Immagine del piatto --}}
+            <div class="col-10 col-md-6 my-2 py-2 @error('image') is-invalid @enderror">
 
                 <div @error('image') class="is-invalid" @enderror>
                     <label for="image">
@@ -85,7 +85,7 @@
                 <input class="btn boo-btn-green mr-2" type="submit" value="Aggiorna">
 
                 {{-- Ritorno alla vista dei post --}}
-                <a class="btn boo-btn-cyan" href="{{ route('admin.plates.show', $plate->id) }}">Back to Plate</a>
+                <a class="btn boo-btn-cyan" href="{{ route('admin.plates.show', $plate->id) }}">Indietro</a>
             </div>
 
         </form>
