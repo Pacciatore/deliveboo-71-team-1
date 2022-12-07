@@ -15,16 +15,13 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.home');
 });
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::middleware('auth')
-    ->namespace('Admin')
-    ->name('admin.')
-    ->prefix('admin')
-    ->group(function () {
-        Route::resource('plates', 'PlateController');
-    });
+Route::get('{any?}', function () {
+    return redirect()->route('guest.home');
+})->where('any', '.*');
