@@ -26,8 +26,13 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function () {
+
+        // Rotta per gli utenti registrati (UR)
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('plates', 'PlateController');
 
 
     });
+
+    // Rotta per i visitatori (UI)
+    Route::get('/home', function () {  return view('guests.home');  });
