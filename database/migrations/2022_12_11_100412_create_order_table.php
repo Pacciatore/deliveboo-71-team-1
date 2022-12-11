@@ -15,7 +15,12 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+
+            $table->string('nome', 25);
+            $table->string('email', 50);
+            $table->string('address', 50);
+            $table->boolean('check_payament')->default(false);
+            $table->decimal('tatal', 4, 2);
         });
     }
 
@@ -26,6 +31,15 @@ class CreateOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order');
+        Schema::table('order', function (Blueprint $table) {
+            //
+            $table->dropColumn([
+                'name',
+                'mail',
+                'address',
+                'total',
+
+            ]);
+        });
     }
 }
