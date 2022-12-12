@@ -6,6 +6,7 @@ use App\Plate;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlateController extends Controller
 {
@@ -17,7 +18,7 @@ class PlateController extends Controller
     public function index()
     {
         //
-        $plates = Plate::all();
+        $plates = Plate::where('user_id', '=', Auth::id())->get();
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -44,6 +45,7 @@ class PlateController extends Controller
         $this->validatePlate($request);
 
         $form_data = $request->all();
+        $form_data['user_id'] = Auth::id();
 
         if (array_key_exists('image', $form_data)) {
             $imgPath = Storage::put('plate_images', $form_data['image']);
@@ -131,7 +133,8 @@ class PlateController extends Controller
             'description' => 'min:5',
             'imgPath' => 'nullable',
             'price' => 'required|min:0|max:99.99',
-            'available' => 'required'
+            'available' => 'required',
+            'user_id' => 'nullable|exists:users,id',
         ], [
             'required' => ':attribute is mandatory',
             'min' => ':attribute should be at least :min chars',
