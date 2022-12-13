@@ -66,3 +66,13 @@
     border: 1px solid $boo-red;
     border-radius: 5px;
 }
+
+.img-container {
+    max-height: 250px;
+    max-width: 250px;
+
+    .img-fluid {
+        max-height: inherit;
+    }
+
+}

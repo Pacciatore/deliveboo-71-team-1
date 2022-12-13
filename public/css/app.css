@@ -10990,6 +10990,15 @@ a.text-dark:focus {
   border-radius: 5px;
 }
 
+.img-container {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.img-container .img-fluid {
+  max-height: inherit;
+}
+
 #plates-index h1 {
   color: #D9534F;
   cursor: default;
