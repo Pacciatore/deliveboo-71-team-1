@@ -68,8 +68,8 @@
 }
 
 .img-container {
-    max-height: 250px;
-    max-width: 250px;
+    max-height: $boo-small-img;
+    max-width: $boo-small-img;
 
     .img-fluid {
         max-height: inherit;
