@@ -131,7 +131,7 @@ class PlateController extends Controller
         $request->validate([
             'name' => 'required|max:25',
             'description' => 'min:5',
-            'imgPath' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
             'price' => 'required|min:0|max:99.99',
             'available' => 'required',
             'user_id' => 'nullable|exists:users,id',
@@ -139,6 +139,7 @@ class PlateController extends Controller
             'required' => ':attribute is mandatory',
             'min' => ':attribute should be at least :min chars',
             'max' => ':attribute should have max length :max chars',
+            'image' => ':attribute must be a jpeg,jpg,png or gif file'
         ]);
     }
 }

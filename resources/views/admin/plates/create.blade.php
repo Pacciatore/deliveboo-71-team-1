@@ -11,7 +11,7 @@
             <div class="col-10 col-md-6 my-2 py-2 @error('name') is-invalid @enderror">
 
                 <label for="name">Nome piatto:</label>
-                <input type="text" name="name" value="{{ old('name', '') }}">
+                <input type="text" name="name" value="{{ old('name', '') }}" required max="25">
 
                 @error('name')
                     <div class="text-danger"> {{ $message }} </div>
@@ -45,8 +45,7 @@
             <div class="col-10 col-md-6 my-2 py-2 @error('price') is-invalid @enderror">
 
                 <label for="price">Prezzo piatto:</label>
-                <input type="number" name="price" step=".01" min="0" max="99.99"
-                    value="{{ old('price', '') }}">
+                <input type="number" name="price" step=".01" min="0" required value="{{ old('price', '') }}">
 
                 @error('price')
                     <div class="text-danger"> {{ $message }} </div>
@@ -57,10 +56,10 @@
             {{-- Immagine del piatto --}}
             <div class="col-10 col-md-6 my-2 py-2 @error('image') is-invalid @enderror">
 
-                <div @error('image') class="is-invalid" @enderror>
+                <div>
                     <label for="image">
                         Carica immagine: </label>
-                    <input type="file" name="image">
+                    <input type="file" name="image" accept="image/*">
                 </div>
 
                 @error('image')
