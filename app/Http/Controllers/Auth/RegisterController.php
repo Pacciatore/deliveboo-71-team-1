@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -61,6 +62,24 @@ class RegisterController extends Controller
     }
 
     /**
+     * Generate a slug for user's registration.
+     *
+     */
+    private function getSlug($activity_name){
+        $slug = Str::slug($activity_name);
+        $slug_base = $slug;
+
+        $existingUser = User::where('slug', $slug)->first();
+        $counter = 1;
+        while($existingUser){
+            $slug = $slug_base . '_' . $counter;
+            $counter++;
+            $existingUser = User::where('slug', $slug)->first();
+        }
+        return $slug;
+    }
+
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -75,7 +94,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
-            'slug' => $data['vat_number'],
+            'slug' => $this->getSlug($data['activity_name']),
             'password' => Hash::make($data['password']),
         ]);
     }
