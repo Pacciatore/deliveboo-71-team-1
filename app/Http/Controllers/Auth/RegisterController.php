@@ -89,6 +89,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $imgPath=Storage::put('uploads', $data['image']);
+
         return User::create([
             'name' => $data['name'],
             'activity_name' => $data['activity_name'],
@@ -97,14 +99,9 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
             'slug' => $this->getSlug($data['activity_name']),
-            'imgPath' => $data['image'],
+            'imgPath' => $imgPath,
             'password' => Hash::make($data['password']),
         ]);
-    }
-
-    protected function store(array $data)
-    {
-        $imgPath = Storage::put('uploads', $data['image']);
     }
 
 
