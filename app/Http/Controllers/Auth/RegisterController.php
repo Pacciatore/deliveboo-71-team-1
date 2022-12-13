@@ -8,6 +8,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -56,8 +58,27 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'address' => ['required', 'string', 'max:80'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
+            'imgPath' => ['string', 'max:150'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+    }
+
+    /**
+     * Generate a slug for user's registration.
+     *
+     */
+    private function getSlug($activity_name){
+        $slug = Str::slug($activity_name);
+        $slug_base = $slug;
+
+        $existingUser = User::where('slug', $slug)->first();
+        $counter = 1;
+        while($existingUser){
+            $slug = $slug_base . '_' . $counter;
+            $counter++;
+            $existingUser = User::where('slug', $slug)->first();
+        }
+        return $slug;
     }
 
     /**
@@ -68,6 +89,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $imgPath=Storage::put('uploads', $data['image']);
+
         return User::create([
             'name' => $data['name'],
             'activity_name' => $data['activity_name'],
@@ -75,8 +98,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
-            'slug' => $data['vat_number'],
+            'slug' => $this->getSlug($data['activity_name']),
+            'imgPath' => $imgPath,
             'password' => Hash::make($data['password']),
         ]);
     }
+
+
+    
 }
