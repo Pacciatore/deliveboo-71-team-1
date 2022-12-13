@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -57,6 +58,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'address' => ['required', 'string', 'max:80'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
+            'imgPath' => ['string', 'max:150'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -95,7 +97,16 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'vat_number' => $data['vat_number'],
             'slug' => $this->getSlug($data['activity_name']),
+            'imgPath' => $data['image'],
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    protected function store(array $data)
+    {
+        $imgPath = Storage::put('uploads', $data['image']);
+    }
+
+
+    
 }
