@@ -37,7 +37,8 @@
                     <div>{{ __('VAT Number: ') }} {{ Auth::user()->vat_number }}</div>
                     <div>
                         @if(Auth::user()->imgPath)
-                        <img src="{{ asset('storage/' . Auth::user()->imgPath) }}" alt="Registered User Image">
+                        <div>{{ __('Image: ') }}</div>
+                        <img class="w-100" src="{{ asset('storage/' . Auth::user()->imgPath) }}" alt="Registered User Image">
                         @endif
                     </div>
 
