@@ -20,7 +20,7 @@ class CreateOrderTable extends Migration
             $table->string('email', 50);
             $table->string('address', 50);
             $table->boolean('check_payament')->default(false);
-            $table->decimal('tatal', 4, 2);
+            $table->decimal('total', 4, 2);
         });
     }
 
@@ -31,11 +31,11 @@ class CreateOrderTable extends Migration
      */
     public function down()
     {
-        Schema::table('order', function (Blueprint $table) {
+        Schema::dropIfExists('orders', function (Blueprint $table) {
             //
             $table->dropColumn([
                 'name',
-                'mail',
+                'email',
                 'address',
                 'total',
 
