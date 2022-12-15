@@ -18,7 +18,9 @@ class ProfileController extends Controller
     //
     public function index()
     {
-        return view('admin.index');
+        $types = Type::all();
+
+        return view('admin.index', compact('types'));
     }
 
     /**

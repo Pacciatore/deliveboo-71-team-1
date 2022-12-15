@@ -37,7 +37,18 @@
             <div>{{ __('Nome: ') }} {{ Auth::user()->name }}</div>
             <div>{{ __('Nome attività: ') }} {{ Auth::user()->activity_name }}</div>
             <div>{{ __('Slug: ') }} {{ Auth::user()->slug }}</div>
-            <div>{{ __('Tipologia risorante: ') }} {{ Auth::user()->type }}</div>
+            <div>{{ __('Tipologia ristorante: ') }}
+            
+                @foreach(Auth::user()->types as $type)
+                <span>{{ $type->name }}</span>
+                @endforeach
+
+            </div>
+
+            
+
+       
+
             <div>{{ __('Email: ') }} {{ Auth::user()->email }}</div>
             <div>{{ __('Indirizzo: ') }} {{ Auth::user()->address }}</div>
             <div>{{ __('Partita IVA: ') }} {{ Auth::user()->vat_number }}</div>
