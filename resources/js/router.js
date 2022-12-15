@@ -9,8 +9,17 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     routes: [
-        { path: '/', name: 'home', component: Home },
-        { path: '/*', name: 'notFound', component: NotFound }
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/404',
+            alias: '*',
+            name: 'notFound',
+            component: NotFound
+        }
     ]
 })
 

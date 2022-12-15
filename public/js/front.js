@@ -19376,7 +19376,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'home',
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/*',
+    path: '/404',
+    alias: '*',
     name: 'notFound',
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
