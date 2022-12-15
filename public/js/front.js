@@ -1943,9 +1943,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  name: 'JumboComponent'
 });
 
 /***/ }),
@@ -2155,12 +2153,15 @@ var staticRenderFns = [function () {
     _c = _vm._self._c;
   return _c("div", [_c("div", {
     staticClass: "boo-jumbo bg-dark text-white d-flex flex-column align-items-center justify-content-around"
-  }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Inserisci un indirizzo per scoprire le opzioni disponibili nella tua zona")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
+  }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("input", {
+    staticClass: "w-50 p-2",
     attrs: {
-      type: "button"
+      type: "text",
+      name: "searchBar",
+      id: "searchBar",
+      placeholder: "Inserire ristorante da cercare..."
     }
-  }, [_vm._v("Inserire ricerca indirizzo")]), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
+  }), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
 }];
 render._withStripped = true;
 
