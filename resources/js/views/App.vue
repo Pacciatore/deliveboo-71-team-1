@@ -1,20 +1,30 @@
 <template>
-    <div id="App">
+  <div>
 
-        <NavComponent />
+<NavbarComponent/>
+<JumboComponent/>
+<CenterComponent/>
+<PartnerComponent/>
+<FooterComponent/>
 
-    </div>
+  </div>
 </template>
 
 <script>
-import NavComponent from '../components/NavComponent.vue';
+import NavbarComponent from '../components/NavbarComponent.vue';
+import JumboComponent from '../components/JumboComponent.vue';
+import CenterComponent from '../components/CenterComponent.vue';
+import PartnerComponent from '../components/PartnerComponent.vue';
+import FooterComponent from '../components/FooterComponent.vue';
+
 
 export default {
-    name: "App",
-    components: { NavComponent }
+name:"App",
+components: { NavbarComponent, JumboComponent, CenterComponent, PartnerComponent, FooterComponent }
+
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 
 </style>
