@@ -11009,16 +11009,6 @@ a.text-dark:focus {
   cursor: default;
 }
 
-#plates-index .searchBar-toggler {
-  color: rgba(0, 0, 0, 0.5);
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
-}
-
 #plates-index a:not(.btn) {
   color: inherit;
 }
