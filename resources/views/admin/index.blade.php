@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                {{-- <div class="card">
+    <div class="container clearfix">
+        {{-- <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
@@ -18,38 +16,43 @@
                 </div>
             </div> --}}
 
-                <div class="card mt-4">
-                    <div class="card-header">{{ __('User details') }}</div>
+        <h1>{{ __('Benvenuto nel tuo profilo ' . env('APP_NAME')) }}</h1>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        <div>{{ __('Name: ') }} {{ Auth::user()->name }}</div>
-                        <div>{{ __('Activity Name: ') }} {{ Auth::user()->activity_name }}</div>
-                        <div>{{ __('Slug: ') }} {{ Auth::user()->slug }}</div>
-                        <div>{{ __('Type: ') }} {{ Auth::user()->type }}</div>
-                        <div>{{ __('Email: ') }} {{ Auth::user()->email }}</div>
-                        <div>{{ __('Address: ') }} {{ Auth::user()->address }}</div>
-                        <div>{{ __('VAT Number: ') }} {{ Auth::user()->vat_number }}</div>
-                        <div>
-                            @if (Auth::user()->imgPath)
-                                <div>{{ __('Image: ') }}</div>
-                                <div class="img-container m-auto text-center">
-                                    <img class="img-fluid" src="{{ asset('storage/' . Auth::user()->imgPath) }}"
-                                        alt="Registered User Image">
-                                </div>
-                            @endif
-                        </div>
-
-                        <a href="{{ route('admin.profile.edit', Auth::user()->id) }}">Modifica profilo</a>
-
-                    </div>
-                </div>
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
             </div>
+        @endif
+
+        {{-- Image --}}
+        @if (Auth::user()->imgPath)
+            <div class="img-container img-thumbnail float-left mr-2">
+                <img class="img-fluid" src="{{ asset('storage/' . Auth::user()->imgPath) }}" alt="Registered User Image">
+            </div>
+        @endif
+
+        {{-- Profile info --}}
+        <div class="profile-info card">
+
+            <div>{{ __('Nome: ') }} {{ Auth::user()->name }}</div>
+            <div>{{ __('Nome attività: ') }} {{ Auth::user()->activity_name }}</div>
+            <div>{{ __('Slug: ') }} {{ Auth::user()->slug }}</div>
+            <div>{{ __('Tipologia risorante: ') }} {{ Auth::user()->type }}</div>
+            <div>{{ __('Email: ') }} {{ Auth::user()->email }}</div>
+            <div>{{ __('Indirizzo: ') }} {{ Auth::user()->address }}</div>
+            <div>{{ __('Partita IVA: ') }} {{ Auth::user()->vat_number }}</div>
+
         </div>
+
+        {{-- Nav buttons --}}
+        <div class="nav-buttons">
+            {{-- Modifica profilo --}}
+            <a class="btn boo-btn-green mr-2" href="{{ route('admin.profile.edit', Auth::user()->id) }}">Modifica
+                profilo</a>
+
+            {{-- Ritorno alla vista dei post --}}
+            <a class="btn boo-btn-cyan" href="{{ route('admin.plates.index') }}">Visualizza piatti</a>
+        </div>
+
     </div>
 @endsection
