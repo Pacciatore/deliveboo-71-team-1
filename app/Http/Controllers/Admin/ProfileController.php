@@ -56,6 +56,10 @@ class ProfileController extends Controller
             $form_data['imgPath'] = $imgPath;
         }
 
+        if ($form_data['activity_name'] != Auth::user()->activity_name) {
+            $form_data['slug'] = $this->getSlug($form_data['activity_name']);
+        }
+
         $user = User::query()->findOrFail($id);
         $user->update($form_data);
 
