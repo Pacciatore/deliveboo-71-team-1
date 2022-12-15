@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
@@ -30,7 +31,9 @@ class ProfileController extends Controller
     {
         //
         $user = Auth::user();
-        return view('auth.edit', compact('user'));
+        $types = Type::all();
+
+        return view('auth.edit', compact('user', 'types'));
     }
 
     /**
@@ -47,6 +50,7 @@ class ProfileController extends Controller
 
         $form_data = $request->all();
 
+        // Controllo per l'immagine
         if (array_key_exists('image', $form_data)) {
 
             if (Auth::user()->imgPath) {
@@ -56,12 +60,18 @@ class ProfileController extends Controller
             $form_data['imgPath'] = $imgPath;
         }
 
+        // Controllo per lo slug
         if ($form_data['activity_name'] != Auth::user()->activity_name) {
             $form_data['slug'] = $this->getSlug($form_data['activity_name']);
         }
 
         $user = User::query()->findOrFail($id);
         $user->update($form_data);
+
+        // Controllo per i tipi
+        if (array_key_exists('types', $form_data)) {
+            $user->types()->sync($form_data['types']);
+        }
 
         return redirect()->route('admin.profile.index', Auth::user()->id);
     }
