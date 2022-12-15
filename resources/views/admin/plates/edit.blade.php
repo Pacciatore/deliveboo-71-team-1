@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="edit-plate" class="container">
-        <h1>Modifica {{ $plate->name }}</h1>
+        <h1 class="boo-cyan">Modifica {{ $plate->name }}</h1>
 
         <form action="{{ route('admin.plates.update', $plate->id) }}" method="POST" enctype="multipart/form-data"
             class="d-flex flex-column">

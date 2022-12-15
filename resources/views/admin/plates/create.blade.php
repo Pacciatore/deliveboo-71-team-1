@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="create-plate" class="container">
-        <h1>Aggiungi piatto al ristorante</h1>
+        <h1 class="boo-cyan">Aggiungi piatto al ristorante</h1>
 
         <form action="{{ route('admin.plates.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

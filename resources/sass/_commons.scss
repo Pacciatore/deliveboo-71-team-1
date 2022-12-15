@@ -62,6 +62,13 @@
 
 //#endregion Site Buttons
 
+//#region Text Colors
+.boo-cyan {
+    color: $cyan;
+}
+
+//#endregion Text Colors
+
 .is-invalid {
     border: 1px solid $boo-red;
     border-radius: 5px;

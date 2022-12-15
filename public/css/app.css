@@ -10985,6 +10985,10 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
+.boo-cyan {
+  color: #6cb2eb;
+}
+
 .is-invalid {
   border: 1px solid #D9534F;
   border-radius: 5px;
@@ -11040,13 +11044,5 @@ a.text-dark:focus {
 
 #show-plate .not-available:hover {
   cursor: default;
-}
-
-#edit-plate h1 {
-  color: #6cb2eb;
-}
-
-#create-plate h1 {
-  color: #6cb2eb;
 }
 
