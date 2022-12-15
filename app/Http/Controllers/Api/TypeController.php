@@ -58,9 +58,11 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show($name)
     {
         //
+        $type = Type::where('name', $name)->first();
+
         $data = [
             'results' => $type,
             'success' => isset($type)
