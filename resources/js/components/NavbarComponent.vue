@@ -12,11 +12,11 @@
                 <button type="button" class="btn btn-primary">Collabora con noi</button>
 
                 <!-- ROTTA D'ACCESSO DA INSERIRE -->
-                <button type="button" class="btn btn-primary">Registrati o accedi</button>
+                <a href="/login" class="btn btn-primary">Registrati o accedi</a>
 
                 <!-- MENU A COMPARSA LATERALE DA INSERIRE -->
                 <button type="button" class="btn btn-primary">Menu</button>
-             </div>
+            </div>
 
         </div>
 
@@ -26,16 +26,13 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+export default {
+    name: 'NavbarComponent'
+}
 </script>
 
 
 <style scoped lang="scss">
-
 
 </style>
 

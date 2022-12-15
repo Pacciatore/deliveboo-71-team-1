@@ -1960,9 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  name: 'NavbarComponent'
 });
 
 /***/ }),
@@ -2200,10 +2198,10 @@ var staticRenderFns = [function () {
     attrs: {
       type: "button"
     }
-  }, [_vm._v("Collabora con noi")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Collabora con noi")]), _vm._v(" "), _c("a", {
     staticClass: "btn btn-primary",
     attrs: {
-      type: "button"
+      href: "/login"
     }
   }, [_vm._v("Registrati o accedi")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
