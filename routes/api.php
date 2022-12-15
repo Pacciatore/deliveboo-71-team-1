@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('plates', 'Api\PlateController', ['only' => ['index', 'show']]);
+
+Route::resource('types', 'Api\TypeController', ['only' => ['index', 'show']]);
