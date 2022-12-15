@@ -10932,6 +10932,78 @@ a.text-dark:focus {
   }
 }
 
+.navbar {
+  background-color: #FFEEAD;
+}
+
+.navbar .navbar-brand {
+  color: #D9534F;
+  transition: color 0.25s;
+}
+
+.navbar .navbar-brand:hover {
+  color: #FFAD60;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.boo-btn-orange {
+  background-color: #FFAD60;
+  color: white;
+}
+
+.boo-btn-orange:hover {
+  background-color: #e99e58;
+  color: white;
+}
+
+.boo-btn-green {
+  background-color: #96CEB4;
+  color: white;
+}
+
+.boo-btn-green:hover {
+  background-color: #66b08d;
+  color: white;
+}
+
+.boo-btn-cyan {
+  background-color: #6cb2eb;
+  color: white;
+}
+
+.boo-btn-cyan:hover {
+  background-color: #5892c1;
+  color: white;
+}
+
+.btn a:hover {
+  text-decoration: none;
+}
+
+.boo-cyan {
+  color: #6cb2eb;
+}
+
+.is-invalid {
+  border: 1px solid #D9534F;
+  border-radius: 5px;
+}
+
+.img-container {
+  max-height: 250px;
+  max-width: 250px;
+}
+
+.img-container .img-fluid {
+  max-height: inherit;
+}
+
 #plates-index h1 {
   color: #D9534F;
   cursor: default;
