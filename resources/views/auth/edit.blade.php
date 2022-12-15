@@ -39,7 +39,7 @@
                     <input id="activity_name" type="text"
                         class="form-control @error('activity_name') is-invalid @enderror" name="activity_name"
                         value="{{ old('activity_name', Auth::user()->activity_name) }}" required
-                        autocomplete="activity_name" autofocus>
+                        autocomplete="activity_name">
 
                     @error('activity_name')
                         <span class="invalid-feedback" role="alert">
@@ -49,22 +49,65 @@
                 </div>
             </div>
 
-            <!-- Type -->
-            <div class="form-group row">
-                <label for="type"
-                    class="col-md-2 col-form-label text-md-right">{{ __('Type (Italian, Cinese.. or Meat, Fish ..)') }}</label>
+            {{-- Checkbox dei type --}}
+            {{-- TODO: validation  --}}
+            @if ($errors->any())
+                <div class="form-group row">
+                    <label for="type"
+                        class="col-md-2 col-form-label text-md-right">{{ __('Tipologie ristorante') }}</label>
 
-                <div class="col-md-6">
-                    <input id="type" type="text" class="form-control @error('type') is-invalid @enderror"
-                        name="type" value="{{ old('type', Auth::user()->type) }}" required autocomplete="type" autofocus>
+                    {{-- Elenco checkbox --}}
+                    <div class="col-md-6">
+                        {{-- Qua trattiamo i dati presenti nel form rimbalzato --}}
+                        <div @error('types') class="is-invalid" @enderror>
 
-                    @error('type')
+                            @foreach ($types as $type)
+                                <div class="type-info">
+                                    <input type="checkbox" name="types[]" value="{{ $type->id }}"
+                                        {{ in_array($type->id, old('types', [])) ? 'checked' : '' }}>
+                                    <label>{{ $type->name }}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    @error('types')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+
                 </div>
-            </div>
+            @else
+                {{-- Qua trattiamo i dati presenti nella tabella Tags --}}
+                <div class="form-group row">
+
+                    <label for="type"
+                        class="col-md-2 col-form-label text-md-right">{{ __('Tipologie ristorante') }}</label>
+
+                    {{-- Elenco checkbox --}}
+                    <div class="col-md-6">
+
+                        @foreach ($types as $type)
+                            <div class="type-info">
+                                <input type="checkbox" @error('types') class="is-invalid" @enderror name="types[]"
+                                    value="{{ $type->id }}" {{ $user->types->contains($type) ? 'checked' : '' }}>
+                                <label>{{ $type->name }}</label>
+                            </div>
+                        @endforeach
+
+                    </div>
+
+                    @error('types')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
+
+                </div>
+            @endif
+
 
             <!-- Address -->
             <div class="form-group row">
@@ -72,8 +115,7 @@
 
                 <div class="col-md-6">
                     <input id="address" type="text" class="form-control @error('address') is-invalid @enderror"
-                        name="address" value="{{ old('address', Auth::user()->address) }}" required autocomplete="address"
-                        autofocus>
+                        name="address" value="{{ old('address', Auth::user()->address) }}" required autocomplete="address">
 
                     @error('address')
                         <span class="invalid-feedback" role="alert">
@@ -90,7 +132,7 @@
                 <div class="col-md-6">
                     <input id="vat_number" type="number" class="form-control @error('vat_number') is-invalid @enderror"
                         name="vat_number" value="{{ old('vat_number', Auth::user()->vat_number) }}" required
-                        autocomplete="vat_number" autofocus>
+                        autocomplete="vat_number">
 
                     @error('vat_number')
                         <span class="invalid-feedback" role="alert">
@@ -107,7 +149,7 @@
 
                 <div class="col-md-6">
                     <input id="image" type="file" class=" @error('image') is-invalid @enderror" name="image"
-                        value="{{ old('image') }}" autocomplete="image" autofocus>
+                        value="{{ old('image') }}" autocomplete="image">
 
                     @error('image')
                         <span class="invalid-feedback" role="alert">
@@ -132,7 +174,7 @@
 
                 <input class="btn boo-btn-green mr-2" type="submit" value="Invia modifiche">
 
-                {{-- Ritorno alla vista dei post --}}
+                {{-- Ritorno alla vista dell'utente --}}
                 <a class="btn boo-btn-cyan" href="{{ route('admin.profile.index') }}">Indietro</a>
             </div>
 

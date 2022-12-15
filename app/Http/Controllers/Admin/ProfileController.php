@@ -92,12 +92,12 @@ class ProfileController extends Controller
         return Validator::make($request, [
             'name' => ['required', 'string', 'max:255'],
             'activity_name' => ['required', 'string', 'max:50'],
-            'type' => ['string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'address' => ['required', 'string', 'max:80'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'imgPath' => ['string', 'max:150'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'types' => ['required', 'exists:types,id']
         ]);
     }
 

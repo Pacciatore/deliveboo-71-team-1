@@ -60,6 +60,7 @@ class RegisterController extends Controller
             'vat_number' => ['required', 'numeric', 'digits:11'],
             'imgPath' => ['string', 'max:150'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'types' => ['required', 'exists:types,id']
         ]);
     }
 
@@ -67,13 +68,14 @@ class RegisterController extends Controller
      * Generate a slug for user's registration.
      *
      */
-    private function getSlug($activity_name){
+    private function getSlug($activity_name)
+    {
         $slug = Str::slug($activity_name);
         $slug_base = $slug;
 
         $existingUser = User::where('slug', $slug)->first();
         $counter = 1;
-        while($existingUser){
+        while ($existingUser) {
             $slug = $slug_base . '_' . $counter;
             $counter++;
             $existingUser = User::where('slug', $slug)->first();
@@ -90,11 +92,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $imgPath=Storage::put('uploads', $data['image']);
-        
+        $imgPath = Storage::put('uploads', $data['image']);
+
         $user = new User();
 
-        
+
         $user->name = $data['name'];
         $user->activity_name = $data['activity_name'];
         $user->email = $data['email'];
@@ -106,14 +108,14 @@ class RegisterController extends Controller
 
         $user->save();
 
-        if(array_key_exists('types', $data)){
+        if (array_key_exists('types', $data)) {
             $user->types()->sync($data['types']);
         }
 
         return $user;
 
-        
-        
+
+
 
         // return User::create([
         //     'name' => $data['name'],
@@ -125,9 +127,6 @@ class RegisterController extends Controller
         //     'password' => Hash::make($data['password']),
         // ]);
 
-        
+
     }
-
-
-    
 }
