@@ -20,8 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::middleware('auth')
     ->namespace('Admin')
     ->name('admin.')
@@ -35,10 +33,7 @@ Route::middleware('auth')
         Route::resource('plates', 'PlateController');
     });
 
-// Rotta per i visitatori (UI)
-Route::get('/home', function () {
-    return view('guests.home');
-});
+// Rotta di fallback
 Route::get('{any?}', function () {
-    return redirect()->route('guest.home');
+    return view('guest.home');
 })->where('any', '.*');
