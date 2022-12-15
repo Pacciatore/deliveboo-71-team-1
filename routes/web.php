@@ -28,11 +28,12 @@ Route::middleware('auth')
     ->group(function () {
 
         // Rotta per gli utenti registrati (UR)
-        Route::get('/', 'HomeController@index')->name('home');
+        // Route::get('/', 'HomeController@index')->name('home');
+        Route::resource('/', 'ProfileController');
         Route::resource('plates', 'PlateController');
-
-
     });
 
-    // Rotta per i visitatori (UI)
-    Route::get('/home', function () {  return view('guests.home');  });
+// Rotta per i visitatori (UI)
+Route::get('/home', function () {
+    return view('guests.home');
+});
