@@ -29,7 +29,8 @@ Route::middleware('auth')
 
         // Rotta per gli utenti registrati (UR)
         // Route::get('/', 'HomeController@index')->name('home');
-        Route::resource('/', 'ProfileController');
+        Route::redirect('/', 'admin/profile');
+        Route::resource('profile', 'ProfileController');
         Route::resource('plates', 'PlateController');
     });
 

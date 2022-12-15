@@ -45,6 +45,7 @@
                             @endif
                         </div>
 
+                        <a href="{{ route('admin.profile.edit', Auth::user()->id) }}">Modifica profilo</a>
 
                     </div>
                 </div>
