@@ -1948,11 +1948,22 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
+  return _vm._m(0);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
   return _c("div", {
     staticClass: "navbar navbar-expand-md navbar-light shadow-sm"
-  }, [_vm._v("\n    Questa è la nav-bar\n")]);
-};
-var staticRenderFns = [];
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("a", {
+    staticClass: "navbar-brand",
+    attrs: {
+      href: "/home"
+    }
+  }, [_vm._v(" Deliveboo ")])])]);
+}];
 render._withStripped = true;
 
 
