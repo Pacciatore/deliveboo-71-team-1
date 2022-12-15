@@ -16038,8 +16038,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
-module.exports = __webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
