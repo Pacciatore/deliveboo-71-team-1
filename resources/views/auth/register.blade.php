@@ -40,11 +40,13 @@
                         </div>
 
                         <div class="form-group row"> <!-- Type -->
-                            <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type (Italian, Cinese.. or Meat, Fish ..)') }}</label>
+                            <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
 
                             <div class="col-md-6">
-                                <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type') }}" required autocomplete="type" autofocus>
-
+                                   @foreach($types as $type) 
+                                   <input type="checkbox" class="form-control @error('type') is-invalid @enderror" name="types[]" value="{{ $type->id }}" autofocus>
+                                   <label>{{ $type->name }}</label>
+                                   @endforeach
                                 @error('type')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

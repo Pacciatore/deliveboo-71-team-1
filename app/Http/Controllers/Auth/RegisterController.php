@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Type;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -54,7 +55,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'activity_name' => ['required', 'string', 'max:50'],
-            'type' => [ 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'address' => ['required', 'string', 'max:80'],
             'vat_number' => ['required', 'numeric', 'digits:11'],
@@ -89,19 +89,43 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $imgPath=Storage::put('uploads', $data['image']);
 
-        return User::create([
-            'name' => $data['name'],
-            'activity_name' => $data['activity_name'],
-            'type' => $data['type'],
-            'email' => $data['email'],
-            'address' => $data['address'],
-            'vat_number' => $data['vat_number'],
-            'slug' => $this->getSlug($data['activity_name']),
-            'imgPath' => $imgPath,
-            'password' => Hash::make($data['password']),
-        ]);
+        $imgPath=Storage::put('uploads', $data['image']);
+        
+        $user = new User();
+
+        
+        $user->name = $data['name'];
+        $user->activity_name = $data['activity_name'];
+        $user->email = $data['email'];
+        $user->address = $data['address'];
+        $user->vat_number = $data['vat_number'];
+        $user->slug = $this->getSlug($data['activity_name']);
+        $user->imgPath = $imgPath;
+        $user->password = Hash::make($data['password']);
+
+        $user->save();
+
+        if(array_key_exists('types', $data)){
+            $user->types()->sync($data['types']);
+        }
+
+        return $user;
+
+        
+        
+
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'activity_name' => $data['activity_name'],
+        //     'email' => $data['email'],
+        //     'address' => $data['address'],
+        //     'vat_number' => $data['vat_number'],
+        //     'slug' => $data['vat_number'],
+        //     'password' => Hash::make($data['password']),
+        // ]);
+
+        
     }
 
 

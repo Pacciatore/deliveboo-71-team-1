@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'activity_name', 'type', 'email', 'address', 'vat_number', 'imgPath', 'slug',  'password',
+        'name', 'activity_name', 'email', 'address', 'vat_number', 'imgPath', 'slug',  'password',
     ];
 
     /**
@@ -40,5 +40,12 @@ class User extends Authenticatable
     public function plates()
     {
         return $this->hasMany('App\Plate');
+
+    }
+    //
+
+
+    public function types(){
+        return $this->belongsToMany('App\Type');
     }
 }
