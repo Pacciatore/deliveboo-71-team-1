@@ -15,6 +15,8 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $orders = Order::all();
+        return view('guest.orders.index', compact('orders'));
     }
 
     /**
@@ -25,6 +27,7 @@ class OrderController extends Controller
     public function create()
     {
         //
+        return view('guest.orders.create');
     }
 
     /**
@@ -36,6 +39,12 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
+        $form_data=$request->all();
+        $order = new Order();
+        $order->fill($form_data);
+        $order->save();
+
+        return redirect()->route('order.show');
     }
 
     /**
@@ -47,6 +56,8 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+    
+        return view('guest.orders.show');
     }
 
     /**
