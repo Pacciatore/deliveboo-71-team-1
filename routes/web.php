@@ -31,11 +31,11 @@ Route::middleware('auth')
         Route::redirect('/', 'admin/profile');
         Route::resource('profile', 'ProfileController')->only('index', 'edit', 'update', 'destroy');
         Route::resource('plates', 'PlateController');
-        
+        Route::resource('orders', 'OrderController');
     });
 
 // Rotta per i visitatori (UI)
-Route::resource('orders', 'OrderController');
+
 
 Route::get('/home', function () {
     return view('guests.home');
