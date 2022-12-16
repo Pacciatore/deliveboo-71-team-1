@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.home');
-});
+Route::get('/', function () {   return view('guest.home');   })->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); // se l'utente è loggato
 
 Route::middleware('auth')
     ->namespace('Admin')
@@ -33,13 +31,17 @@ Route::middleware('auth')
         Route::redirect('/', 'admin/profile');
         Route::resource('profile', 'ProfileController')->only('index', 'edit', 'update', 'destroy');
         Route::resource('plates', 'PlateController');
-        Route::resource('orders', 'OrderController');
+        
     });
 
 // Rotta per i visitatori (UI)
+Route::resource('orders', 'OrderController');
+
 Route::get('/home', function () {
     return view('guests.home');
 });
+
 Route::get('{any?}', function () {
-    return redirect()->route('guest.home');
+    return redirect()->route('home');
 })->where('any', '.*');
+
