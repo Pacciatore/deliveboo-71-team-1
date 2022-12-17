@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.home');
-});
+Route::get('/', function () {   return view('guest.home');   })->name('home');
 
 Auth::routes();
 
@@ -31,9 +29,11 @@ Route::middleware('auth')
         Route::redirect('/', 'admin/profile');
         Route::resource('profile', 'ProfileController')->only('index', 'edit', 'update', 'destroy');
         Route::resource('plates', 'PlateController');
+        Route::resource('orders', 'OrderController');
     });
 
 // Rotta di fallback
 Route::get('{any?}', function () {
     return view('guest.home');
 })->where('any', '.*');
+
