@@ -57,8 +57,6 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
-    
-        return view('guest.orders.show');
     }
 
     /**
@@ -70,6 +68,7 @@ class OrderController extends Controller
     public function edit(Order $order)
     {
         //
+        return view('admin.orders.edit', compact('order'));
     }
 
     /**
@@ -82,6 +81,12 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+        $form_data=$request->all();
+
+        $order->fill($form_data);
+        $order->update();
+
+        return redirect()->route('admin.orders.index');
     }
 
     /**
@@ -93,5 +98,7 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+        $order->delete();
+        return redirect()->route('admin.orders.index');
     }
 }
