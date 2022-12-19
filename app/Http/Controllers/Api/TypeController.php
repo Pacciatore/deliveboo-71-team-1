@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
-use App\Http\Resources\Type as TypeResource;
+use App\Http\Resources\TypeCollection;
 use App\Type;
 use Illuminate\Http\Request;
 
@@ -30,7 +30,7 @@ class TypeController extends Controller
                 'success' => false
             ];
         }
-        return TypeResource::collection(Type::all());
+        return new TypeCollection(Type::all());
     }
 
     /**
@@ -66,7 +66,7 @@ class TypeController extends Controller
         $type = Type::where('name', $name)->first();
 
         $data = [
-            'results' => $type,
+            'data' => $type,
             'success' => isset($type)
         ];
 
