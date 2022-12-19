@@ -12,5 +12,11 @@ class Plate extends Model
     public function users()
     {
         return $this->hasOne('App\User');
+        
+    }
+    
+    public function orders(){
+
+        return $this->belongsToMany('App\Order');
     }
 }
