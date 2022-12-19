@@ -6,8 +6,8 @@
             <span>Selezione tipologia di ristorante: </span>
 
             <select name="types" v-model="typesFilter" @change="getTypesFilter()">
-                <option value="" selected>All</option>
-                <option v-for="type in types.data" :value="type.name">
+                <option :value="{}" selected>Tutti i ristoranti</option>
+                <option v-for="type in types" :value="type.name">
                     {{ type.name }}
                 </option>
             </select>
@@ -21,11 +21,11 @@
 export default {
     name: 'SearchComponent',
     props: {
-        types: Object
+        types: Array
     },
     data() {
         return {
-            typesFilter: '',
+            typesFilter: {},
 
             errorMessage: '',
         }
@@ -37,6 +37,9 @@ export default {
 
         getTypesFilter() {
             console.log('ricerca....', this.typesFilter);
+            if (this.typesFilter == '') {
+                this.typesFilter = {}
+            }
             this.$emit('search', this.typesFilter);
         },
 

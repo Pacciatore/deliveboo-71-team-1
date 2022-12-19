@@ -2024,10 +2024,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       loading: true,
       errorMessage: '',
-      typesList: {},
+      typesList: [],
       plates: {},
       types: {},
-      restaurants: {}
+      restaurants: []
     };
   },
   mounted: function mounted() {
@@ -2045,6 +2045,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("api/types/".concat(elementToSearch)).then(function (response) {
         _this.loading = false;
         _this.types = _this.getDataFromApiResponse(response);
+        console.log('risultato queryApi', _this.types);
       })["catch"](function (e) {
         _this.loading = false;
         _this.errorMessage = 'Error: ' + e.message + '   Reload page!';
@@ -2053,7 +2054,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     getDataFromApiResponse: function getDataFromApiResponse(response) {
       console.log('data from api: ', response);
-      return response.status === 200 ? response.data.results : [];
+      return response.status === 200 ? response.data.data : {};
     },
     // Caricamento di tutti i ristoranti/utenti
     loadRestaurant: function loadRestaurant(url) {
@@ -2061,8 +2062,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(url).then(function (_ref) {
         var data = _ref.data;
         if (data.success) {
-          _this2.restaurants = data.results;
-          console.log('restaurants loaded: ', data.results.data);
+          _this2.restaurants = data.data;
+          console.log('restaurants loaded: ', data.data);
         } else {
           _this2.errorMessage = data.error;
         }
@@ -2075,8 +2076,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(url).then(function (_ref2) {
         var data = _ref2.data;
         if (data.success) {
-          _this3.typesList = data.results;
-          console.log('typesList loaded: ', data.results.data);
+          _this3.typesList = data.data;
+          console.log('typesList loaded: ', data.data);
         } else {
           _this3.errorMessage = data.error;
         }
@@ -2129,11 +2130,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchComponent',
   props: {
-    types: Object
+    types: Array
   },
   data: function data() {
     return {
-      typesFilter: '',
+      typesFilter: {},
       errorMessage: ''
     };
   },
@@ -2143,6 +2144,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getTypesFilter: function getTypesFilter() {
       console.log('ricerca....', this.typesFilter);
+      if (this.typesFilter == '') {
+        this.typesFilter = {};
+      }
       this.$emit('search', this.typesFilter);
     },
     typeCheck: function typeCheck(id) {
@@ -2164,9 +2168,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchResponseComponent',
+  data: function data() {
+    return {
+      filteredType: {}
+    };
+  },
   props: {
     filter: Object,
-    restaurants: Object
+    restaurants: Array
+  },
+  methods: {
+    showFilter: function showFilter() {
+      console.log('questo è il filtro', filter);
+    }
   }
 });
 
@@ -2504,10 +2518,12 @@ var render = function render() {
     }
   }, [_c("option", {
     attrs: {
-      value: "",
       selected: ""
+    },
+    domProps: {
+      value: {}
     }
-  }, [_vm._v("All")]), _vm._v(" "), _vm._l(_vm.types.data, function (type) {
+  }, [_vm._v("Tutti i ristoranti")]), _vm._v(" "), _vm._l(_vm.types, function (type) {
     return _c("option", {
       domProps: {
         value: type.name
@@ -2537,9 +2553,12 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [!_vm.filter.data ? _c("p", [_vm._v(" " + _vm._s(_vm.filter.name) + " ")]) : _c("div", [_c("div", {
-    staticClass: "d-flex flex-wrap"
-  }, _vm._l(_vm.restaurants.data, function (restaurant) {
+  }, [_vm.filter ? _c("p", [_vm._v(" " + _vm._s(_vm.filter.name) + " ")]) : _c("div", [_c("div", {
+    staticClass: "d-flex flex-wrap",
+    on: {
+      click: _vm.showFilter
+    }
+  }, _vm._l(_vm.restaurants, function (restaurant) {
     return _c("div", {
       staticClass: "card p-3 col-4"
     }, [_c("h4", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), restaurant.imgPath ? _c("div", {

@@ -38,11 +38,11 @@ export default {
             loading: true,
             errorMessage: '',
 
-            typesList: {},
+            typesList: [],
             plates: {},
 
             types: {},
-            restaurants: {}
+            restaurants: []
         }
     },
     mounted() {
@@ -65,6 +65,7 @@ export default {
                 .then((response) => {
                     this.loading = false;
                     this.types = this.getDataFromApiResponse(response);
+                    console.log('risultato queryApi', this.types)
                 })
                 .catch((e) => {
                     this.loading = false;
@@ -76,15 +77,15 @@ export default {
 
         getDataFromApiResponse(response) {
             console.log('data from api: ', response);
-            return response.status === 200 ? response.data.results : []
+            return response.status === 200 ? response.data.data : {}
         },
 
         // Caricamento di tutti i ristoranti/utenti
         loadRestaurant(url) {
             axios.get(url).then(({ data }) => {
                 if (data.success) {
-                    this.restaurants = data.results;
-                    console.log('restaurants loaded: ', data.results.data)
+                    this.restaurants = data.data;
+                    console.log('restaurants loaded: ', data.data)
                 } else {
                     this.errorMessage = data.error;
                 }
@@ -96,8 +97,8 @@ export default {
         loadTypes(url) {
             axios.get(url).then(({ data }) => {
                 if (data.success) {
-                    this.typesList = data.results;
-                    console.log('typesList loaded: ', data.results.data)
+                    this.typesList = data.data;
+                    console.log('typesList loaded: ', data.data)
                 } else {
                     this.errorMessage = data.error;
                 }
