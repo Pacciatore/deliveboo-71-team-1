@@ -35,7 +35,7 @@ export default {
     },
     data() {
         return {
-            loadin: true,
+            loading: true,
             errorMessage: '',
 
             types: {}
@@ -47,11 +47,11 @@ export default {
             this.queryApi(query)
         },
 
-        queryApi(textToSearch) {
+        queryApi(elementToSearch) {
 
             this.loading = true;
 
-            axios.get(`api/types/${textToSearch}`)
+            axios.get(`api/types/${elementToSearch}`)
                 .then((response) => {
                     this.loading = false;
                     this.types = this.getDataFromApiResponse(response);
@@ -65,7 +65,7 @@ export default {
         },
 
         getDataFromApiResponse(response) {
-            console.log(response);
+            console.log('data from api: ', response);
             return response.status === 200 ? response.data.results : []
         }
 

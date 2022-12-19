@@ -1,7 +1,18 @@
 <template>
-    <div>
+    <div class="container py-2">
 
-        componente per la ricerca
+        <div class="filter-selection">
+
+            <span>Selezione tipologia di ristorante: </span>
+
+            <select name="types" v-model="typesFilter" @change="getTypesFilter()">
+                <option value="" selected>All</option>
+                <option v-if="loading == false" v-for="type in types.data" :value="type.name">
+                    {{ type.name }}
+                </option>
+            </select>
+
+        </div>
 
     </div>
 </template>
@@ -11,36 +22,52 @@ export default {
     name: 'SearchComponent',
     data() {
         return {
-            plates: undefined,
-            searchText: '',
+            plates: {},
+            types: {},
+            typesFilter: '',
 
             errorMessage: '',
             loading: true
         }
     },
     mounted() {
-        console.log('JumboComponent exists');
-
-        this.loadPage('/api/plates');
+        this.loadPlates('/api/plates');
+        this.loadTypes('/api/types');
+        this.getTypesFilter();
     },
     methods: {
 
-        getSearchText() {
-            console.log('ricerca....', this.searchText);
-            this.$emit('search', this.searchText);
+        getTypesFilter() {
+            console.log('ricerca....', this.typesFilter);
+            this.$emit('search', this.typesFilter);
         },
 
-        loadPage(url) {
+        loadPlates(url) {
             axios.get(url).then(({ data }) => {
                 if (data.success) {
                     this.plates = data.results;
-                    console.log(data.results.data)
+                    console.log('plates loaded: ', data.results.data)
                 } else {
                     this.errorMessage = data.error;
                 }
                 this.loading = false;
             });
+        },
+        loadTypes(url) {
+            axios.get(url).then(({ data }) => {
+                if (data.success) {
+                    this.types = data.results;
+                    console.log('types loaded: ', data.results.data)
+                } else {
+                    this.errorMessage = data.error;
+                }
+                this.loading = false;
+            });
+        },
+        typeCheck(id) {
+            console.log(id)
         }
+
 
     }
 }

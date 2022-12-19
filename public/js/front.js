@@ -2022,7 +2022,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      loadin: true,
+      loading: true,
       errorMessage: '',
       types: {}
     };
@@ -2031,10 +2031,10 @@ __webpack_require__.r(__webpack_exports__);
     search: function search(query) {
       this.queryApi(query);
     },
-    queryApi: function queryApi(textToSearch) {
+    queryApi: function queryApi(elementToSearch) {
       var _this = this;
       this.loading = true;
-      axios.get("api/types/".concat(textToSearch)).then(function (response) {
+      axios.get("api/types/".concat(elementToSearch)).then(function (response) {
         _this.loading = false;
         _this.types = _this.getDataFromApiResponse(response);
       })["catch"](function (e) {
@@ -2044,7 +2044,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getDataFromApiResponse: function getDataFromApiResponse(response) {
-      console.log(response);
+      console.log('data from api: ', response);
       return response.status === 200 ? response.data.results : [];
     }
   }
@@ -2080,33 +2080,51 @@ __webpack_require__.r(__webpack_exports__);
   name: 'SearchComponent',
   data: function data() {
     return {
-      plates: undefined,
-      searchText: '',
+      plates: {},
+      types: {},
+      typesFilter: '',
       errorMessage: '',
       loading: true
     };
   },
   mounted: function mounted() {
-    console.log('JumboComponent exists');
-    this.loadPage('/api/plates');
+    this.loadPlates('/api/plates');
+    this.loadTypes('/api/types');
+    this.getTypesFilter();
   },
   methods: {
-    getSearchText: function getSearchText() {
-      console.log('ricerca....', this.searchText);
-      this.$emit('search', this.searchText);
+    getTypesFilter: function getTypesFilter() {
+      console.log('ricerca....', this.typesFilter);
+      this.$emit('search', this.typesFilter);
     },
-    loadPage: function loadPage(url) {
+    loadPlates: function loadPlates(url) {
       var _this = this;
       axios.get(url).then(function (_ref) {
         var data = _ref.data;
         if (data.success) {
           _this.plates = data.results;
-          console.log(data.results.data);
+          console.log('plates loaded: ', data.results.data);
         } else {
           _this.errorMessage = data.error;
         }
         _this.loading = false;
       });
+    },
+    loadTypes: function loadTypes(url) {
+      var _this2 = this;
+      axios.get(url).then(function (_ref2) {
+        var data = _ref2.data;
+        if (data.success) {
+          _this2.types = data.results;
+          console.log('types loaded: ', data.results.data);
+        } else {
+          _this2.errorMessage = data.error;
+        }
+        _this2.loading = false;
+      });
+    },
+    typeCheck: function typeCheck(id) {
+      console.log(id);
     }
   }
 });
@@ -2430,7 +2448,45 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_vm._v("\n\n    componente per la ricerca\n\n")]);
+  return _c("div", {
+    staticClass: "container py-2"
+  }, [_c("div", {
+    staticClass: "filter-selection"
+  }, [_c("span", [_vm._v("Selezione tipologia di ristorante: ")]), _vm._v(" "), _c("select", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.typesFilter,
+      expression: "typesFilter"
+    }],
+    attrs: {
+      name: "types"
+    },
+    on: {
+      change: [function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.typesFilter = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }, function ($event) {
+        return _vm.getTypesFilter();
+      }]
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "",
+      selected: ""
+    }
+  }, [_vm._v("All")]), _vm._v(" "), _vm._l(_vm.types.data, function (type) {
+    return _vm.loading == false ? _c("option", {
+      domProps: {
+        value: type.name
+      }
+    }, [_vm._v("\n                " + _vm._s(type.name) + "\n            ")]) : _vm._e();
+  })], 2)])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
