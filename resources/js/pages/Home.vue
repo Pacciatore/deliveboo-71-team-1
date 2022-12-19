@@ -2,7 +2,8 @@
     <div>
 
         <NavbarComponent />
-        <JumboComponent @search="search" />
+        <JumboComponent />
+        <SearchComponent @search="search" />
         <SearchResponseComponent :response="types" />
         <CenterComponent />
         <PartnerComponent />
@@ -17,7 +18,9 @@ import JumboComponent from '../components/JumboComponent.vue';
 import CenterComponent from '../components/CenterComponent.vue';
 import PartnerComponent from '../components/PartnerComponent.vue';
 import FooterComponent from '../components/FooterComponent.vue';
-import SearchResponseComponent from '../components/SearchResponseComponent.vue';
+
+import SearchComponent from '../utils/SearchComponent.vue';
+import SearchResponseComponent from '../utils/SearchResponseComponent.vue';
 
 export default {
     name: 'Home',
@@ -27,11 +30,12 @@ export default {
         CenterComponent,
         PartnerComponent,
         FooterComponent,
-        SearchResponseComponent
+        SearchResponseComponent,
+        SearchComponent
     },
     data() {
         return {
-            loadin: true,
+            loading: true,
             errorMessage: '',
 
             types: {}
@@ -43,11 +47,11 @@ export default {
             this.queryApi(query)
         },
 
-        queryApi(textToSearch) {
+        queryApi(elementToSearch) {
 
             this.loading = true;
 
-            axios.get(`api/types/${textToSearch}`)
+            axios.get(`api/types/${elementToSearch}`)
                 .then((response) => {
                     this.loading = false;
                     this.types = this.getDataFromApiResponse(response);
@@ -61,7 +65,7 @@ export default {
         },
 
         getDataFromApiResponse(response) {
-            console.log(response);
+            console.log('data from api: ', response);
             return response.status === 200 ? response.data.results : []
         }
 
