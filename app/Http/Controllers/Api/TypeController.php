@@ -17,7 +17,7 @@ class TypeController extends Controller
     {
         //
         try {
-            $types = Type::where('id', '>', 0)->paginate(15);
+            $types = Type::where('id', '>', 0)->with('users')->paginate(15);
             $data = [
                 'results' => $types,
                 'success' => count($types) > 0
@@ -61,7 +61,7 @@ class TypeController extends Controller
     public function show($name)
     {
         //
-        $type = Type::where('name', $name)->first();
+        $type = Type::where('name', $name)->with('users')->first();
 
         $data = [
             'results' => $type,

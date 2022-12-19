@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         //
         try {
-            $users = User::where('id', '>', 0)->paginate(15);
+            $users = User::where('id', '>', 0)->with('types')->paginate(15);
             $data = [
                 'results' => $users,
                 'success' => count($users) > 0
@@ -61,7 +61,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $user = User::where('id', $id)->first();
+        $user = User::where('id', $id)->with('types')->first();
         $data = [
             'results' => $user,
             'success' => isset($user)
