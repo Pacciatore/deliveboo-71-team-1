@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+
+use App\Http\Resources\Type as TypeResource;
 use App\Type;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,7 @@ class TypeController extends Controller
                 'success' => false
             ];
         }
-        return response()->json($data);
+        return TypeResource::collection(Type::all());
     }
 
     /**
