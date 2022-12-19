@@ -24,46 +24,50 @@
             </div>
         @endif
 
-        {{-- Image --}}
+        <div class="row justify-content-around gx-3 gy-3">
+            {{-- Image --}}
         @if (Auth::user()->imgPath)
-            <div class="img-container img-thumbnail float-left mr-2">
-                <img class="img-fluid" src="{{ asset('storage/' . Auth::user()->imgPath) }}" alt="Registered User Image">
-            </div>
-        @endif
+        <div class="card col-12 col-sm-12 col-md-6 col-lg-6">
+            <img class="img-fluid" src="{{ asset('storage/' . Auth::user()->imgPath) }}" alt="Registered User Image">
+        </div>
+    @endif
 
-        {{-- Profile info --}}
-        <div class="profile-info card">
+    {{-- Profile info --}}
+    <div class="profile-info card col-12 col-sm-12 col-md-6 col-lg-6">
 
-            <div>{{ __('Nome: ') }} {{ Auth::user()->name }}</div>
-            <div>{{ __('Nome attività: ') }} {{ Auth::user()->activity_name }}</div>
-            <div>{{ __('Slug: ') }} {{ Auth::user()->slug }}</div>
-            <div>{{ __('Tipologia ristorante: ') }}
-            
-                @foreach(Auth::user()->types as $type)
-                <span>{{ $type->name }}</span>
-                @endforeach
+        <div>{{ __('Nome: ') }} {{ Auth::user()->name }}</div>
+        <div>{{ __('Nome attività: ') }} {{ Auth::user()->activity_name }}</div>
+        <div>{{ __('Slug: ') }} {{ Auth::user()->slug }}</div>
+        <div>{{ __('Tipologia ristorante: ') }}
+        
+            @foreach(Auth::user()->types as $type)
+            <span>{{ $type->name }}</span>
+            @endforeach
 
-            </div>
+        </div>
 
-            
+        
 
-       
+   
 
-            <div>{{ __('Email: ') }} {{ Auth::user()->email }}</div>
-            <div>{{ __('Indirizzo: ') }} {{ Auth::user()->address }}</div>
-            <div>{{ __('Partita IVA: ') }} {{ Auth::user()->vat_number }}</div>
+        <div>{{ __('Email: ') }} {{ Auth::user()->email }}</div>
+        <div>{{ __('Indirizzo: ') }} {{ Auth::user()->address }}</div>
+        <div>{{ __('Partita IVA: ') }} {{ Auth::user()->vat_number }}</div>
+
+    </div>
+
+    
 
         </div>
 
         {{-- Nav buttons --}}
-        <div class="nav-buttons">
-            {{-- Modifica profilo --}}
-            <a class="btn boo-btn-green mr-2" href="{{ route('admin.profile.edit', Auth::user()->id) }}">Modifica
-                profilo</a>
+    <div class="nav-buttons">
+        {{-- Modifica profilo --}}
+        <a class="btn boo-btn-green mr-2" href="{{ route('admin.profile.edit', Auth::user()->id) }}">Modifica
+            profilo</a>
 
-            {{-- Ritorno alla vista dei post --}}
-            <a class="btn boo-btn-cyan" href="{{ route('admin.plates.index') }}">Visualizza piatti</a>
-        </div>
-
+        {{-- Ritorno alla vista dei post --}}
+        <a class="btn boo-btn-cyan" href="{{ route('admin.plates.index') }}">Visualizza piatti</a>
+    </div>
     </div>
 @endsection
