@@ -48,7 +48,7 @@ export default {
 }
 
 img {
-    width: 5%;
+    width: 70px;
 }
 
 ul {

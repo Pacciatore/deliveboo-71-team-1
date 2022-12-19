@@ -2565,7 +2565,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar[data-v-485090b2] {\n  padding: 0;\n  background-color: #FFEEAD;\n}\nimg[data-v-485090b2] {\n  width: 5%;\n}\nul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
+exports.push([module.i, ".navbar[data-v-485090b2] {\n  padding: 0;\n  background-color: #FFEEAD;\n}\nimg[data-v-485090b2] {\n  width: 70px;\n}\nul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
 
 // exports
 
