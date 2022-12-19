@@ -1,38 +1,60 @@
 <template>
     <div>
 
-        <div class="navbar navbar-expand-xxl bg-dark">
+        <!-- 1 -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img src="/assets/DELIVEBOO.png" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <!-- CAMBIARE E METTERE LOGO -->
-            <button type="button" class="btn btn-primary">logo deliveroo da cambiare</button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login">Accedi o registrati</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
 
-            <div>
-
-                <!-- MENU A TENDINA DA INSERIRE -->
-                <button type="button" class="btn btn-primary">Collabora con noi</button>
-
-                <!-- ROTTA D'ACCESSO DA INSERIRE -->
-                <a href="/login" class="btn btn-primary">Registrati o accedi</a>
-
-                <!-- MENU A COMPARSA LATERALE DA INSERIRE -->
-                <button type="button" class="btn btn-primary">Menu</button>
             </div>
-
-        </div>
-
-
-
+        </nav>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'NavbarComponent'
+    name: 'NavbarComponent',
+
+
 }
+
 </script>
 
 
 <style scoped lang="scss">
+@import '../../sass/_variables.scss';
 
+.navbar {
+    padding: 0;
+    background-color: #FFEEAD;
+}
+
+img {
+    width: 5%;
+}
+
+ul {
+    li {
+        padding: 0px 10px;
+    }
+}
 </style>
 
