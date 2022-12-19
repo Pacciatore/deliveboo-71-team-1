@@ -18,8 +18,8 @@ class Type extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
 
-            'users' => $this->whenPivotLoadedAs('user', 'type_user', function () {
-                return $this->user->id;
+            'users' => $this->whenPivotLoaded('type_user', function () {
+                return $this->pivot->type_id;
             })
 
         ];

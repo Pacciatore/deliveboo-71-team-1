@@ -62,7 +62,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $user = User::where('id', $id)->first();
+        $user = User::with('types')->where('id', $id)->first();
         $data = [
             'results' => $user,
             'success' => isset($user)
