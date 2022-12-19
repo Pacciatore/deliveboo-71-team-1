@@ -2537,7 +2537,21 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [!_vm.filter.data ? _c("p", [_vm._v(" " + _vm._s(_vm.filter.name) + " ")]) : _c("div", [_c("div", {
+  }, [!_vm.filter.data ? _c("div", [_c("div", {
+    staticClass: "d-flex flex-wrap"
+  }, _vm._l(_vm.filter.users, function (filteredRestaurant) {
+    return _c("div", {
+      staticClass: "card p-3 col-4"
+    }, [_c("h4", [_vm._v(_vm._s(filteredRestaurant.name))]), _vm._v(" "), filteredRestaurant.imgPath ? _c("div", {
+      staticClass: "img-container align-self-center"
+    }, [_c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "/storage/" + filteredRestaurant.imgPath,
+        alt: filteredRestaurant.name
+      }
+    })]) : _vm._e()]);
+  }), 0)]) : _c("div", [_c("div", {
     staticClass: "d-flex flex-wrap"
   }, _vm._l(_vm.restaurants.data, function (restaurant) {
     return _c("div", {
