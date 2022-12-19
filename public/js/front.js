@@ -2510,7 +2510,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_vm.response ? _c("p", [_vm._v(" " + _vm._s(_vm.response.name) + " ")]) : _c("p", [_vm._v("Nessun risultato")])]);
+  }, [!_vm.response.data ? _c("p", [_vm._v(" " + _vm._s(_vm.response.name) + " ")]) : _c("p", [_vm._v("Tutti i ristoranti")])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
