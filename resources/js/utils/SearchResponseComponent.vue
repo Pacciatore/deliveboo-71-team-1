@@ -1,9 +1,9 @@
 <template>
     <div class="container">
 
-        <p v-if="response"> {{ response.name }} </p>
+        <p v-if="!response.data"> {{ response.name }} </p>
 
-        <p v-else>Nessun risultato</p>
+        <p v-else>Tutti i ristoranti</p>
 
     </div>
 </template>
