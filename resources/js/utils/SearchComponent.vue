@@ -20,10 +20,13 @@
 <script>
 export default {
     name: 'SearchComponent',
+    props: {
+        types: Object
+    },
     data() {
         return {
             plates: {},
-            types: {},
+
             typesFilter: '',
 
             errorMessage: '',
@@ -32,7 +35,6 @@ export default {
     },
     mounted() {
         this.loadPlates('/api/plates');
-        this.loadTypes('/api/types');
         this.getTypesFilter();
     },
     methods: {
@@ -47,17 +49,6 @@ export default {
                 if (data.success) {
                     this.plates = data.results;
                     console.log('plates loaded: ', data.results.data)
-                } else {
-                    this.errorMessage = data.error;
-                }
-                this.loading = false;
-            });
-        },
-        loadTypes(url) {
-            axios.get(url).then(({ data }) => {
-                if (data.success) {
-                    this.types = data.results;
-                    console.log('types loaded: ', data.results.data)
                 } else {
                     this.errorMessage = data.error;
                 }

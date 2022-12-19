@@ -2024,12 +2024,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       loading: true,
       errorMessage: '',
+      typesList: {},
       types: {},
       restaurants: {}
     };
   },
   mounted: function mounted() {
     this.loadRestaurant('api/restaurants');
+    this.loadTypes('/api/types');
   },
   methods: {
     search: function search(query) {
@@ -2063,6 +2065,19 @@ __webpack_require__.r(__webpack_exports__);
         }
         _this2.loading = false;
       });
+    },
+    loadTypes: function loadTypes(url) {
+      var _this3 = this;
+      axios.get(url).then(function (_ref2) {
+        var data = _ref2.data;
+        if (data.success) {
+          _this3.typesList = data.results;
+          console.log('typesList loaded: ', data.results.data);
+        } else {
+          _this3.errorMessage = data.error;
+        }
+        _this3.loading = false;
+      });
     }
   }
 });
@@ -2095,10 +2110,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchComponent',
+  props: {
+    types: Object
+  },
   data: function data() {
     return {
       plates: {},
-      types: {},
       typesFilter: '',
       errorMessage: '',
       loading: true
@@ -2106,7 +2123,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.loadPlates('/api/plates');
-    this.loadTypes('/api/types');
     this.getTypesFilter();
   },
   methods: {
@@ -2125,19 +2141,6 @@ __webpack_require__.r(__webpack_exports__);
           _this.errorMessage = data.error;
         }
         _this.loading = false;
-      });
-    },
-    loadTypes: function loadTypes(url) {
-      var _this2 = this;
-      axios.get(url).then(function (_ref2) {
-        var data = _ref2.data;
-        if (data.success) {
-          _this2.types = data.results;
-          console.log('types loaded: ', data.results.data);
-        } else {
-          _this2.errorMessage = data.error;
-        }
-        _this2.loading = false;
       });
     },
     typeCheck: function typeCheck(id) {
@@ -2409,6 +2412,9 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("NavbarComponent"), _vm._v(" "), _c("JumboComponent"), _vm._v(" "), _c("SearchComponent", {
+    attrs: {
+      types: _vm.typesList
+    },
     on: {
       search: _vm.search
     }

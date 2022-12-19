@@ -3,7 +3,7 @@
 
         <NavbarComponent />
         <JumboComponent />
-        <SearchComponent @search="search" />
+        <SearchComponent @search="search" :types="typesList" />
         <SearchResponseComponent :filter="types" :restaurants="restaurants" />
         <CenterComponent />
         <PartnerComponent />
@@ -38,12 +38,16 @@ export default {
             loading: true,
             errorMessage: '',
 
+            typesList: {},
+
             types: {},
             restaurants: {}
         }
     },
     mounted() {
-        this.loadRestaurant('api/restaurants')
+        this.loadRestaurant('api/restaurants');
+        this.loadTypes('/api/types');
+
     },
     methods: {
 
@@ -85,6 +89,17 @@ export default {
             });
         },
 
+        loadTypes(url) {
+            axios.get(url).then(({ data }) => {
+                if (data.success) {
+                    this.typesList = data.results;
+                    console.log('typesList loaded: ', data.results.data)
+                } else {
+                    this.errorMessage = data.error;
+                }
+                this.loading = false;
+            });
+        },
 
 
     }
