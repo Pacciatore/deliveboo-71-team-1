@@ -2025,6 +2025,7 @@ __webpack_require__.r(__webpack_exports__);
       loading: true,
       errorMessage: '',
       typesList: {},
+      plates: {},
       types: {},
       restaurants: {}
     };
@@ -2032,6 +2033,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.loadRestaurant('api/restaurants');
     this.loadTypes('/api/types');
+    this.loadPlates('/api/plates');
   },
   methods: {
     search: function search(query) {
@@ -2053,6 +2055,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log('data from api: ', response);
       return response.status === 200 ? response.data.results : [];
     },
+    // Caricamento di tutti i ristoranti/utenti
     loadRestaurant: function loadRestaurant(url) {
       var _this2 = this;
       axios.get(url).then(function (_ref) {
@@ -2066,6 +2069,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.loading = false;
       });
     },
+    // Caricamento di tutte le tipologie di ristorante
     loadTypes: function loadTypes(url) {
       var _this3 = this;
       axios.get(url).then(function (_ref2) {
@@ -2077,6 +2081,20 @@ __webpack_require__.r(__webpack_exports__);
           _this3.errorMessage = data.error;
         }
         _this3.loading = false;
+      });
+    },
+    // Caricamento di tutti i piatti
+    loadPlates: function loadPlates(url) {
+      var _this4 = this;
+      axios.get(url).then(function (_ref3) {
+        var data = _ref3.data;
+        if (data.success) {
+          _this4.plates = data.results;
+          console.log('plates loaded: ', data.results.data);
+        } else {
+          _this4.errorMessage = data.error;
+        }
+        _this4.loading = false;
       });
     }
   }
@@ -2115,33 +2133,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      plates: {},
       typesFilter: '',
-      errorMessage: '',
-      loading: true
+      errorMessage: ''
     };
   },
   mounted: function mounted() {
-    this.loadPlates('/api/plates');
     this.getTypesFilter();
   },
   methods: {
     getTypesFilter: function getTypesFilter() {
       console.log('ricerca....', this.typesFilter);
       this.$emit('search', this.typesFilter);
-    },
-    loadPlates: function loadPlates(url) {
-      var _this = this;
-      axios.get(url).then(function (_ref) {
-        var data = _ref.data;
-        if (data.success) {
-          _this.plates = data.results;
-          console.log('plates loaded: ', data.results.data);
-        } else {
-          _this.errorMessage = data.error;
-        }
-        _this.loading = false;
-      });
     },
     typeCheck: function typeCheck(id) {
       console.log(id);
@@ -2506,11 +2508,11 @@ var render = function render() {
       selected: ""
     }
   }, [_vm._v("All")]), _vm._v(" "), _vm._l(_vm.types.data, function (type) {
-    return _vm.loading == false ? _c("option", {
+    return _c("option", {
       domProps: {
         value: type.name
       }
-    }, [_vm._v("\n                " + _vm._s(type.name) + "\n            ")]) : _vm._e();
+    }, [_vm._v("\n                " + _vm._s(type.name) + "\n            ")]);
   })], 2)])]);
 };
 var staticRenderFns = [];

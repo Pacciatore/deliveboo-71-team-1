@@ -39,6 +39,7 @@ export default {
             errorMessage: '',
 
             typesList: {},
+            plates: {},
 
             types: {},
             restaurants: {}
@@ -47,6 +48,7 @@ export default {
     mounted() {
         this.loadRestaurant('api/restaurants');
         this.loadTypes('/api/types');
+        this.loadPlates('/api/plates');
 
     },
     methods: {
@@ -77,6 +79,7 @@ export default {
             return response.status === 200 ? response.data.results : []
         },
 
+        // Caricamento di tutti i ristoranti/utenti
         loadRestaurant(url) {
             axios.get(url).then(({ data }) => {
                 if (data.success) {
@@ -89,11 +92,25 @@ export default {
             });
         },
 
+        // Caricamento di tutte le tipologie di ristorante
         loadTypes(url) {
             axios.get(url).then(({ data }) => {
                 if (data.success) {
                     this.typesList = data.results;
                     console.log('typesList loaded: ', data.results.data)
+                } else {
+                    this.errorMessage = data.error;
+                }
+                this.loading = false;
+            });
+        },
+
+        // Caricamento di tutti i piatti
+        loadPlates(url) {
+            axios.get(url).then(({ data }) => {
+                if (data.success) {
+                    this.plates = data.results;
+                    console.log('plates loaded: ', data.results.data)
                 } else {
                     this.errorMessage = data.error;
                 }

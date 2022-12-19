@@ -7,7 +7,7 @@
 
             <select name="types" v-model="typesFilter" @change="getTypesFilter()">
                 <option value="" selected>All</option>
-                <option v-if="loading == false" v-for="type in types.data" :value="type.name">
+                <option v-for="type in types.data" :value="type.name">
                     {{ type.name }}
                 </option>
             </select>
@@ -25,16 +25,12 @@ export default {
     },
     data() {
         return {
-            plates: {},
-
             typesFilter: '',
 
             errorMessage: '',
-            loading: true
         }
     },
     mounted() {
-        this.loadPlates('/api/plates');
         this.getTypesFilter();
     },
     methods: {
@@ -44,17 +40,6 @@ export default {
             this.$emit('search', this.typesFilter);
         },
 
-        loadPlates(url) {
-            axios.get(url).then(({ data }) => {
-                if (data.success) {
-                    this.plates = data.results;
-                    console.log('plates loaded: ', data.results.data)
-                } else {
-                    this.errorMessage = data.error;
-                }
-                this.loading = false;
-            });
-        },
         typeCheck(id) {
             console.log(id)
         }
