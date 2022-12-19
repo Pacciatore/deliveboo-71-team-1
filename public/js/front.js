@@ -1946,34 +1946,9 @@ __webpack_require__.r(__webpack_exports__);
   name: 'JumboComponent',
   data: function data() {
     return {
-      plates: undefined,
-      searchText: '',
       errorMessage: '',
       loading: true
     };
-  },
-  mounted: function mounted() {
-    console.log('JumboComponent exists');
-    this.loadPage('/api/plates');
-  },
-  methods: {
-    getSearchText: function getSearchText() {
-      console.log('ricerca....', this.searchText);
-      this.$emit('search', this.searchText);
-    },
-    loadPage: function loadPage(url) {
-      var _this = this;
-      axios.get(url).then(function (_ref) {
-        var data = _ref.data;
-        if (data.success) {
-          _this.plates = data.results;
-          console.log(data.results.data);
-        } else {
-          _this.errorMessage = data.error;
-        }
-        _this.loading = false;
-      });
-    }
   }
 });
 
@@ -2102,7 +2077,38 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SearchComponent'
+  name: 'SearchComponent',
+  data: function data() {
+    return {
+      plates: undefined,
+      searchText: '',
+      errorMessage: '',
+      loading: true
+    };
+  },
+  mounted: function mounted() {
+    console.log('JumboComponent exists');
+    this.loadPage('/api/plates');
+  },
+  methods: {
+    getSearchText: function getSearchText() {
+      console.log('ricerca....', this.searchText);
+      this.$emit('search', this.searchText);
+    },
+    loadPage: function loadPage(url) {
+      var _this = this;
+      axios.get(url).then(function (_ref) {
+        var data = _ref.data;
+        if (data.success) {
+          _this.plates = data.results;
+          console.log(data.results.data);
+        } else {
+          _this.errorMessage = data.error;
+        }
+        _this.loading = false;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2244,38 +2250,15 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
+  return _vm._m(0);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
   return _c("div", [_c("div", {
     staticClass: "boo-jumbo bg-dark text-white d-flex flex-column align-items-center justify-content-around"
-  }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.searchText,
-      expression: "searchText"
-    }],
-    staticClass: "w-50 p-2",
-    attrs: {
-      type: "text",
-      name: "searchBar",
-      id: "searchBar",
-      placeholder: "Inserire ristorante da cercare..."
-    },
-    domProps: {
-      value: _vm.searchText
-    },
-    on: {
-      keyup: function keyup($event) {
-        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
-        return _vm.getSearchText.apply(null, arguments);
-      },
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.searchText = $event.target.value;
-      }
-    }
-  }), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
-};
-var staticRenderFns = [];
+  }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
+}];
 render._withStripped = true;
 
 
@@ -2389,11 +2372,11 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("NavbarComponent"), _vm._v(" "), _c("JumboComponent", {
+  return _c("div", [_c("NavbarComponent"), _vm._v(" "), _c("JumboComponent"), _vm._v(" "), _c("SearchComponent", {
     on: {
       search: _vm.search
     }
-  }), _vm._v(" "), _c("SearchComponent"), _vm._v(" "), _c("SearchResponseComponent", {
+  }), _vm._v(" "), _c("SearchResponseComponent", {
     attrs: {
       response: _vm.types
     }

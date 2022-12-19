@@ -2,8 +2,8 @@
     <div>
 
         <NavbarComponent />
-        <JumboComponent @search="search" />
-        <SearchComponent />
+        <JumboComponent />
+        <SearchComponent @search="search" />
         <SearchResponseComponent :response="types" />
         <CenterComponent />
         <PartnerComponent />
