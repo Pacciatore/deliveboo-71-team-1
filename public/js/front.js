@@ -2024,8 +2024,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       loading: true,
       errorMessage: '',
-      types: {}
+      types: {},
+      restaurants: {}
     };
+  },
+  mounted: function mounted() {
+    this.loadRestaurant('api/restaurants');
   },
   methods: {
     search: function search(query) {
@@ -2046,6 +2050,19 @@ __webpack_require__.r(__webpack_exports__);
     getDataFromApiResponse: function getDataFromApiResponse(response) {
       console.log('data from api: ', response);
       return response.status === 200 ? response.data.results : [];
+    },
+    loadRestaurant: function loadRestaurant(url) {
+      var _this2 = this;
+      axios.get(url).then(function (_ref) {
+        var data = _ref.data;
+        if (data.success) {
+          _this2.restaurants = data.results;
+          console.log('restaurants loaded: ', data.results.data);
+        } else {
+          _this2.errorMessage = data.error;
+        }
+        _this2.loading = false;
+      });
     }
   }
 });
@@ -2143,7 +2160,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchResponseComponent',
   props: {
-    response: Object
+    filter: Object,
+    restaurants: Object
   }
 });
 
@@ -2396,7 +2414,8 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("SearchResponseComponent", {
     attrs: {
-      response: _vm.types
+      filter: _vm.types,
+      restaurants: _vm.restaurants
     }
   }), _vm._v(" "), _c("CenterComponent"), _vm._v(" "), _c("PartnerComponent"), _vm._v(" "), _c("FooterComponent")], 1);
 };
@@ -2510,7 +2529,21 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [!_vm.response.data ? _c("p", [_vm._v(" " + _vm._s(_vm.response.name) + " ")]) : _c("p", [_vm._v("Tutti i ristoranti")])]);
+  }, [!_vm.filter.data ? _c("p", [_vm._v(" " + _vm._s(_vm.filter.name) + " ")]) : _c("div", [_c("div", {
+    staticClass: "d-flex flex-wrap"
+  }, _vm._l(_vm.restaurants.data, function (restaurant) {
+    return _c("div", {
+      staticClass: "card p-3 col-4"
+    }, [_c("h4", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), restaurant.imgPath ? _c("div", {
+      staticClass: "img-container align-self-center"
+    }, [_c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "/storage/" + restaurant.imgPath,
+        alt: restaurant.name
+      }
+    })]) : _vm._e()]);
+  }), 0)])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -19816,8 +19849,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
-module.exports = __webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

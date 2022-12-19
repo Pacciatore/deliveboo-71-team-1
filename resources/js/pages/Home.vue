@@ -4,7 +4,7 @@
         <NavbarComponent />
         <JumboComponent />
         <SearchComponent @search="search" />
-        <SearchResponseComponent :response="types" />
+        <SearchResponseComponent :filter="types" :restaurants="restaurants" />
         <CenterComponent />
         <PartnerComponent />
         <FooterComponent />
@@ -38,8 +38,12 @@ export default {
             loading: true,
             errorMessage: '',
 
-            types: {}
+            types: {},
+            restaurants: {}
         }
+    },
+    mounted() {
+        this.loadRestaurant('api/restaurants')
     },
     methods: {
 
@@ -67,7 +71,19 @@ export default {
         getDataFromApiResponse(response) {
             console.log('data from api: ', response);
             return response.status === 200 ? response.data.results : []
-        }
+        },
+
+        loadRestaurant(url) {
+            axios.get(url).then(({ data }) => {
+                if (data.success) {
+                    this.restaurants = data.results;
+                    console.log('restaurants loaded: ', data.results.data)
+                } else {
+                    this.errorMessage = data.error;
+                }
+                this.loading = false;
+            });
+        },
 
 
 
