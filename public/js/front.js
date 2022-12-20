@@ -2592,15 +2592,15 @@ var render = function render() {
   }, _vm._l(_vm.filter.users, function (filteredRestaurant) {
     return _c("div", {
       staticClass: "card p-3 col-4"
-    }, [_c("h4", [_vm._v(_vm._s(filteredRestaurant.name))]), _vm._v(" "), filteredRestaurant.imgPath ? _c("div", {
+    }, [_c("h4", [_vm._v(_vm._s(filteredRestaurant.name))]), _vm._v(" "), _c("div", {
       staticClass: "img-container align-self-center"
     }, [_c("img", {
       staticClass: "img-fluid",
       attrs: {
-        src: "/storage/" + filteredRestaurant.imgPath,
+        src: !filteredRestaurant.imgPath ? "/assets/restaurant-default.jpg" : "/storage/" + filteredRestaurant.imgPath,
         alt: filteredRestaurant.name
       }
-    })]) : _vm._e()]);
+    })])]);
   }), 0)]) : _vm.filter.users ? _c("div", [_c("div", {
     staticClass: "danger"
   }, [_vm._v("Nessun risultato")])]) : _c("div", [_c("div", {
@@ -2608,15 +2608,15 @@ var render = function render() {
   }, _vm._l(_vm.restaurants.data, function (restaurant) {
     return _c("div", {
       staticClass: "card p-3 col-4"
-    }, [_c("h4", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), restaurant.imgPath ? _c("div", {
+    }, [_c("h4", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("div", {
       staticClass: "img-container align-self-center"
     }, [_c("img", {
       staticClass: "img-fluid",
       attrs: {
-        src: "/storage/" + restaurant.imgPath,
+        src: !restaurant.imgPath ? "/assets/restaurant-default.jpg" : "/storage/" + restaurant.imgPath,
         alt: restaurant.name
       }
-    })]) : _vm._e()]);
+    })])]);
   }), 0)])]);
 };
 var staticRenderFns = [];

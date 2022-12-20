@@ -7,8 +7,9 @@
             <div class="d-flex flex-wrap">
                 <div v-for="filteredRestaurant in filter.users" class="card p-3 col-4">
                     <h4>{{ filteredRestaurant.name }}</h4>
-                    <div v-if="filteredRestaurant.imgPath" class="img-container align-self-center">
-                        <img class="img-fluid" :src="'/storage/' + filteredRestaurant.imgPath"
+                    <div class="img-container align-self-center">
+                        <img class="img-fluid"
+                            :src="!filteredRestaurant.imgPath ? '/assets/restaurant-default.jpg' : '/storage/' + filteredRestaurant.imgPath"
                             :alt="filteredRestaurant.name">
                     </div>
                 </div>
@@ -27,8 +28,10 @@
             <div class="d-flex flex-wrap">
                 <div v-for="restaurant in restaurants.data" class="card p-3 col-4">
                     <h4>{{ restaurant.name }}</h4>
-                    <div v-if="restaurant.imgPath" class="img-container align-self-center">
-                        <img class="img-fluid" :src="'/storage/' + restaurant.imgPath" :alt="restaurant.name">
+                    <div class="img-container align-self-center">
+                        <img class="img-fluid"
+                            :src="!restaurant.imgPath ? '/assets/restaurant-default.jpg' : '/storage/' + restaurant.imgPath"
+                            :alt="restaurant.name">
                     </div>
                 </div>
             </div>
