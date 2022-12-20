@@ -25,7 +25,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm ">
             <div class="container">
-                <img style="width: 70px" src="/assets/DELIVEBOO.png" alt="">
+
+                {{-- Company Logo --}}
+                <a href="/" class="navbar-brand" style="max-width: 7.33333333%">
+                    <img class="img-fluid" src="/assets/DELIVEBOO.png" alt="deliveboo-logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
