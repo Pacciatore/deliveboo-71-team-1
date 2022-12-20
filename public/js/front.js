@@ -2334,19 +2334,58 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
-};
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
   return _c("div", [_c("nav", {
     staticClass: "navbar navbar-expand-lg navbar-light"
+  }, [_c("div", {
+    staticClass: "container"
   }, [_c("img", {
     attrs: {
       src: "/assets/DELIVEBOO.png",
       alt: ""
     }
-  }), _vm._v(" "), _c("button", {
+  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      id: "navbarSupportedContent"
+    }
+  }, [_c("ul", {
+    staticClass: "navbar-nav mr-auto"
+  }), _vm._v(" "), _c("ul", {
+    staticClass: "navbar-nav ml-auto"
+  }, [_c("li", {
+    staticClass: "nav-item dropdown"
+  }, [_c("a", {
+    pre: true,
+    attrs: {
+      id: "navbarDropdown",
+      "class": "nav-link dropdown-toggle",
+      href: "#",
+      role: "button",
+      "data-toggle": "dropdown",
+      "aria-haspopup": "true",
+      "aria-expanded": "false"
+    }
+  }, [_vm._v("\n                            Benvenuto su Deliveboo!\n                        ")]), _vm._v(" "), _c("div", {
+    staticClass: "dropdown-menu dropdown-menu-right",
+    attrs: {
+      "aria-labelledby": "navbarDropdown"
+    }
+  }, [_c("router-link", {
+    staticClass: "dropdown-item",
+    attrs: {
+      to: "/"
+    }
+  }, [_vm._v("Home")]), _vm._v(" "), _c("a", {
+    staticClass: "dropdown-item",
+    attrs: {
+      href: "/login"
+    }
+  }, [_vm._v("\n                                Accedi o registrati\n                            ")])], 1)])])])])])]);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("button", {
     staticClass: "navbar-toggler",
     attrs: {
       type: "button",
@@ -2358,45 +2397,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("span", {
     staticClass: "navbar-toggler-icon"
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "collapse navbar-collapse",
-    attrs: {
-      id: "navbarSupportedContent"
-    }
-  }, [_c("ul", {
-    staticClass: "navbar-nav mr-auto"
-  }, [_c("li", {
-    staticClass: "nav-item active"
-  }, [_c("a", {
-    staticClass: "nav-link",
-    attrs: {
-      href: "/login"
-    }
-  }, [_vm._v("Accedi o registrati")])]), _vm._v(" "), _c("li", {
-    staticClass: "nav-item dropdown"
-  }, [_c("div", {
-    staticClass: "dropdown-menu",
-    attrs: {
-      "aria-labelledby": "navbarDropdown"
-    }
-  }, [_c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Action")]), _vm._v(" "), _c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Another action")]), _vm._v(" "), _c("div", {
-    staticClass: "dropdown-divider"
-  }), _vm._v(" "), _c("a", {
-    staticClass: "dropdown-item",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Something else here")])])])])])])]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -7082,7 +7083,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar[data-v-485090b2] {\n  padding: 0;\n  background-color: #FFEEAD;\n}\nimg[data-v-485090b2] {\n  width: 70px;\n}\nul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
+exports.push([module.i, ".navbar[data-v-485090b2] {\n  background-color: #FFEEAD;\n}\nimg[data-v-485090b2] {\n  width: 70px;\n}\nul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
 
 // exports
 
