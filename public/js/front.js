@@ -2045,6 +2045,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("api/types/".concat(elementToSearch)).then(function (response) {
         _this.loading = false;
         _this.types = _this.getDataFromApiResponse(response);
+        console.log('types filtrati(?)', _this.types);
       })["catch"](function (e) {
         _this.loading = false;
         _this.errorMessage = 'Error: ' + e.message + '   Reload page!';
@@ -2164,9 +2165,23 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchResponseComponent',
+  data: function data() {
+    return {
+      userList: []
+    };
+  },
   props: {
     filter: Object,
     restaurants: Object
+  },
+  mounted: function mounted() {
+    this.userList = this.getUsers();
+  },
+  methods: {
+    getUsers: function getUsers() {
+      console.log('utenti da filtro', this.filter);
+      return this.filter.users;
+    }
   }
 });
 
@@ -2537,7 +2552,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [!_vm.filter.data ? _c("div", [_c("div", {
+  }, [_vm.filter.users && _vm.filter.users.length != 0 ? _c("div", [_c("div", {
     staticClass: "d-flex flex-wrap"
   }, _vm._l(_vm.filter.users, function (filteredRestaurant) {
     return _c("div", {
@@ -2551,7 +2566,9 @@ var render = function render() {
         alt: filteredRestaurant.name
       }
     })]) : _vm._e()]);
-  }), 0)]) : _c("div", [_c("div", {
+  }), 0)]) : _vm.filter.users ? _c("div", [_c("div", {
+    staticClass: "danger"
+  }, [_vm._v("Nessun risultato")])]) : _c("div", [_c("div", {
     staticClass: "d-flex flex-wrap"
   }, _vm._l(_vm.restaurants.data, function (restaurant) {
     return _c("div", {

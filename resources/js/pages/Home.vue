@@ -65,6 +65,7 @@ export default {
                 .then((response) => {
                     this.loading = false;
                     this.types = this.getDataFromApiResponse(response);
+                    console.log('types filtrati(?)', this.types);
                 })
                 .catch((e) => {
                     this.loading = false;

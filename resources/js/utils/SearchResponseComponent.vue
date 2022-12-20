@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Ristoranti filtrati -->
-        <div v-if="!filter.data">
+        <div v-if="filter.users && filter.users.length != 0">
 
             <div class="d-flex flex-wrap">
                 <div v-for="filteredRestaurant in filter.users" class="card p-3 col-4">
@@ -15,6 +15,11 @@
             </div>
 
         </div>
+
+        <div v-else-if="filter.users">
+            <div class="danger">Nessun risultato</div>
+        </div>
+
 
         <!-- Tutti i ristoranti -->
         <div v-else>
@@ -37,10 +42,24 @@
 <script>
 export default {
     name: 'SearchResponseComponent',
+    data() {
+        return {
+            userList: []
+        }
+    },
     props: {
         filter: Object,
         restaurants: Object
-    }
+    },
+    mounted() {
+        this.userList = this.getUsers();
+    },
+    methods: {
+        getUsers() {
+            console.log('utenti da filtro', this.filter);
+            return this.filter.users;
+        }
+    },
 }
 </script>
 
