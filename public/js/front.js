@@ -2297,43 +2297,9 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-<<<<<<< HEAD
     staticClass: "boo-jumbo bg-dark text-white d-flex flex-column align-items-center justify-content-around"
   }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
 }];
-=======
-    staticClass: "boo-jumbo bg-dark text-white text-center"
-  }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami")]), _vm._v(" "), _c("h3", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.searchText,
-      expression: "searchText"
-    }],
-    staticClass: "w-50 p-2",
-    attrs: {
-      type: "text",
-      name: "searchBar",
-      id: "searchBar",
-      placeholder: "Inserire ristorante da cercare..."
-    },
-    domProps: {
-      value: _vm.searchText
-    },
-    on: {
-      keyup: function keyup($event) {
-        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
-        return _vm.getSearchText.apply(null, arguments);
-      },
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.searchText = $event.target.value;
-      }
-    }
-  })])]);
-};
-var staticRenderFns = [];
->>>>>>> homepage
 render._withStripped = true;
 
 
@@ -20007,13 +19973,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
 module.exports = __webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/js/front.js */"./resources/js/front.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> homepage
 
 
 /***/ })
