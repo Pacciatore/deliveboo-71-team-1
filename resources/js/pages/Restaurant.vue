@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script>bar
+<script>
 
 import NavbarrestaurantComponent from '../../js/components/NavbarrestaurantComponent.vue'
 import RestaurantdetailsComponent from '../../js/components/RestaurantdetailsComponent.vue'

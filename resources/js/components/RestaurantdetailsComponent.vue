@@ -10,6 +10,7 @@
      <div class="col-lg-4 col-sm-6 col-12">
         <button>Ordina</button>
      </div>
+     <hr>
   </div>
 </template>
 
