@@ -2207,22 +2207,20 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", [_c("div", {
-    staticClass: "boo-big mx-5 my-5"
-  }, [_c("div", {
-    staticClass: "boo-box rounded d-flex bg-primary flex-column justify-content-around"
-  }, [_c("h1", [_vm._v("Segui gli ordini passo passo")]), _vm._v(" "), _c("p", [_vm._v("I piatti e i prodotti che ami, consegnati in pochissimo tempo. Vedrai quando il rider ha ritirato l'ordine, che potrai seguire passo passo, e riceverai una notifica quando sarà quasi da te.")]), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "boo-big rounded bg-primary text-center"
+  }, [_c("h1", [_vm._v("Segui gli ordini passo passo")]), _vm._v(" "), _c("p", [_vm._v("I piatti e i prodotti che ami, consegnati in pochissimo tempo. Vedrai quando il rider ha ritirato\n                l'ordine, che potrai seguire passo passo, e riceverai una notifica quando sarà quasi da te.")]), _vm._v(" "), _c("div", [_c("a", {
     staticClass: "btn btn-dark",
     attrs: {
-      type: "button"
+      href: "https://www.apple.com/it/app-store/"
     }
-  }, [_vm._v("Collegamento App Store")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("\n                    Collegamento App Store\n                ")]), _vm._v(" "), _c("a", {
     staticClass: "btn btn-dark",
     attrs: {
-      type: "button"
+      href: "https://play.google.com/store/games?hl=it&pli=1"
     }
-  }, [_vm._v("Collegamento Google Play")])])]), _vm._v(" "), _c("div")])]), _vm._v(" "), _c("div", {
-    staticClass: "boo-big bg-success text-white d-flex flex-column align-items-center justify-content-around"
-  }, [_c("h1", [_vm._v("Menù in offerta: sconti fino al 25%")]), _vm._v(" "), _c("p", [_vm._v("Perfetti per dare più gusto alla tua settimana, ordinare i piatti più amati da tutta la famigglia e fare una pusa dai fornelli")]), _vm._v(" "), _c("p", [_vm._v("Si applicano spese di consegna e di servizio. Offerta soggetta a disponibilità, solo per ristoranti aderenti all'iniziativa. Si applicano termini e condizioni, consultabili qui. Termini e condizioni qui.")])])]);
+  }, [_vm._v("\n                    Collegamento Google Play\n                ")])])]), _vm._v(" "), _c("div")]), _vm._v(" "), _c("div", {
+    staticClass: "boo-big bg-success text-white text-center"
+  }, [_c("h1", [_vm._v("Menù in offerta: sconti fino al 25%")]), _vm._v(" "), _c("p", [_vm._v("Perfetti per dare più gusto alla tua settimana, ordinare i piatti più amati da tutta la famigglia e fare\n            una pusa dai fornelli")]), _vm._v(" "), _c("p", [_vm._v("Si applicano spese di consegna e di servizio. Offerta soggetta a disponibilità, solo per ristoranti\n            aderenti all'iniziativa. Si applicano termini e condizioni, consultabili qui. Termini e condizioni qui.\n        ")])])]);
 }];
 render._withStripped = true;
 
@@ -2249,28 +2247,30 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "bg-dark boo-footer-bg"
-  }, [_c("footer", {
-    staticClass: "d-flex justify-content-around container"
+    staticClass: "container-fluid bg-dark boo-footer-bg"
   }, [_c("div", {
-    staticClass: "card"
+    staticClass: "container-xxl"
+  }, [_c("footer", {
+    staticClass: "row justify-content-around gx-3 gy-3"
+  }, [_c("div", {
+    staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2"
   }, [_c("h3", [_vm._v("Scopri Deliveboo")]), _vm._v(" "), _c("ul", [_c("li", [_vm._v("Investitori")]), _vm._v(" "), _c("li", [_vm._v("Chi siamo")]), _vm._v(" "), _c("li", [_vm._v("Ristoranti")]), _vm._v(" "), _c("li", [_vm._v("Altro")]), _vm._v(" "), _c("li", [_vm._v("Pressroom")]), _vm._v(" "), _c("li", [_vm._v("Programmazione")]), _vm._v(" "), _c("li", [_vm._v("Design")]), _vm._v(" "), _c("li", [_vm._v("Lavora con noi")]), _vm._v(" "), _c("li", [_vm._v("Diventa nostro partner")])])]), _vm._v(" "), _c("div", {
-    staticClass: "card"
+    staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2"
   }, [_c("h3", [_vm._v("Note legali")]), _vm._v(" "), _c("ul", [_c("li", [_vm._v("Termini e condizioni")]), _vm._v(" "), _c("li", [_vm._v("Informativa sulla privacy")]), _vm._v(" "), _c("li", [_vm._v("Cookies")])])]), _vm._v(" "), _c("div", {
-    staticClass: "card"
+    staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2"
   }, [_c("h3", [_vm._v("Aiuto")]), _vm._v(" "), _c("ul", [_c("li", [_vm._v("Contatti")]), _vm._v(" "), _c("li", [_vm._v("FAQ")]), _vm._v(" "), _c("li", [_vm._v("Tipi di cucina")])])]), _vm._v(" "), _c("div", {
-    staticClass: "card"
+    staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2"
   }, [_c("h3", [_vm._v("Porta Deliveboo con te")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-dark",
+    staticClass: "btn btn-dark m-3",
     attrs: {
       type: "button"
     }
   }, [_vm._v("Collegamento App Store")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-dark",
+    staticClass: "btn btn-dark m-3",
     attrs: {
       type: "button"
     }
-  }, [_vm._v("Collegamento Google Play")])])])]);
+  }, [_vm._v("Collegamento Google Play")])])])])]);
 }];
 render._withStripped = true;
 
@@ -2297,9 +2297,43 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
+<<<<<<< HEAD
     staticClass: "boo-jumbo bg-dark text-white d-flex flex-column align-items-center justify-content-around"
   }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
 }];
+=======
+    staticClass: "boo-jumbo bg-dark text-white text-center"
+  }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami")]), _vm._v(" "), _c("h3", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.searchText,
+      expression: "searchText"
+    }],
+    staticClass: "w-50 p-2",
+    attrs: {
+      type: "text",
+      name: "searchBar",
+      id: "searchBar",
+      placeholder: "Inserire ristorante da cercare..."
+    },
+    domProps: {
+      value: _vm.searchText
+    },
+    on: {
+      keyup: function keyup($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        return _vm.getSearchText.apply(null, arguments);
+      },
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.searchText = $event.target.value;
+      }
+    }
+  })])]);
+};
+var staticRenderFns = [];
+>>>>>>> homepage
 render._withStripped = true;
 
 
@@ -2324,29 +2358,64 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("div", {
-    staticClass: "navbar navbar-expand-xxl bg-dark"
-  }, [_c("button", {
-    staticClass: "btn btn-primary",
+  return _c("div", [_c("nav", {
+    staticClass: "navbar navbar-expand-lg navbar-light"
+  }, [_c("img", {
     attrs: {
-      type: "button"
+      src: "/assets/DELIVEBOO.png",
+      alt: ""
     }
-  }, [_vm._v("logo deliveroo da cambiare")]), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-primary",
+  }), _vm._v(" "), _c("button", {
+    staticClass: "navbar-toggler",
     attrs: {
-      type: "button"
+      type: "button",
+      "data-toggle": "collapse",
+      "data-target": "#navbarSupportedContent",
+      "aria-controls": "navbarSupportedContent",
+      "aria-expanded": "false",
+      "aria-label": "Toggle navigation"
     }
-  }, [_vm._v("Collabora con noi")]), _vm._v(" "), _c("a", {
-    staticClass: "btn btn-primary",
+  }, [_c("span", {
+    staticClass: "navbar-toggler-icon"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      id: "navbarSupportedContent"
+    }
+  }, [_c("ul", {
+    staticClass: "navbar-nav mr-auto"
+  }, [_c("li", {
+    staticClass: "nav-item active"
+  }, [_c("a", {
+    staticClass: "nav-link",
     attrs: {
       href: "/login"
     }
-  }, [_vm._v("Registrati o accedi")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
+  }, [_vm._v("Accedi o registrati")])]), _vm._v(" "), _c("li", {
+    staticClass: "nav-item dropdown"
+  }, [_c("div", {
+    staticClass: "dropdown-menu",
     attrs: {
-      type: "button"
+      "aria-labelledby": "navbarDropdown"
     }
-  }, [_vm._v("Menu")])])])]);
+  }, [_c("a", {
+    staticClass: "dropdown-item",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Action")]), _vm._v(" "), _c("a", {
+    staticClass: "dropdown-item",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Another action")]), _vm._v(" "), _c("div", {
+    staticClass: "dropdown-divider"
+  }), _vm._v(" "), _c("a", {
+    staticClass: "dropdown-item",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Something else here")])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2373,26 +2442,26 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "d-flex"
-  }, [_c("div", [_c("div", {
-    staticClass: "boo-big mx-5 my-5"
+    staticClass: "container-fluid"
   }, [_c("div", {
-    staticClass: "boo-box rounded d-flex bg-primary flex-column justify-content-around"
-  }, [_c("h1", [_vm._v("Diventa nostro partner")]), _vm._v(" "), _c("p", [_vm._v("Raggiungi più clienti con Deliveroo. Gestiamo noi la consegna, così tu puoi dedicarti a offrire i migliori piatti e prodotti.")]), _vm._v(" "), _c("div", [_c("button", {
+    staticClass: "container-xxl"
+  }, [_c("div", {
+    staticClass: "row justify-content-around gx-3 gy-3 p-3"
+  }, [_c("div", {
+    staticClass: "boo-big col-12 col-sm-10 col-md-5 col-lg-5 rounded bg-primary my-2"
+  }, [_c("h1", [_vm._v("Diventa nostro partner")]), _vm._v(" "), _c("p", [_vm._v("Raggiungi più clienti con Deliveroo. Gestiamo noi la consegna, così tu puoi dedicarti a offrire i\n                    migliori piatti e prodotti.\n                ")]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-dark",
+    attrs: {
+      href: "/login"
+    }
+  }, [_vm._v("Registrati e inizia ora")])]), _vm._v(" "), _c("div", {
+    staticClass: "boo-big col-12 col-sm-10 col-md-5 col-lg-5 rounded bg-primary my-2"
+  }, [_c("h1", [_vm._v("Consegna con noi")]), _vm._v(" "), _c("p", [_vm._v("La libertà di consegnare dove e quando vuoi, con ottimi guadagni, convenzioni e sconti\n                    riservati\n                    a te.\n                ")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-dark",
     attrs: {
       type: "button"
     }
-  }, [_vm._v("Inizia ora")])])])])]), _vm._v(" "), _c("div", [_c("div", {
-    staticClass: "boo-big mx-5 my-5"
-  }, [_c("div", {
-    staticClass: "boo-box rounded d-flex bg-primary flex-column justify-content-around"
-  }, [_c("h1", [_vm._v("Consegna con noi")]), _vm._v(" "), _c("p", [_vm._v("La libertà di consegnare dove e quando vuoi, con ottimi guadagni, convenzioni e sconti riservati a te.")]), _vm._v(" "), _c("div", [_c("button", {
-    staticClass: "btn btn-dark",
-    attrs: {
-      type: "button"
-    }
-  }, [_vm._v("Inizia ora")])])])])])]);
+  }, [_vm._v("Inizia ora le tue consegne")])])])])]);
 }];
 render._withStripped = true;
 
@@ -2607,7 +2676,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".boo-big[data-v-42a6388d] {\n  height: 30rem;\n}\n.boo-box[data-v-42a6388d] {\n  height: 25rem;\n  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;\n}", ""]);
+exports.push([module.i, ".boo-big[data-v-42a6388d] {\n  padding: 40px 0;\n  margin-top: 20px;\n}\n.boo-big *[data-v-42a6388d] {\n  margin: 15px 0;\n}", ""]);
 
 // exports
 
@@ -2626,7 +2695,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".boo-footer-bg[data-v-abfbddf2] {\n  height: 25rem;\n}\nul[data-v-abfbddf2] {\n  list-style: none;\n}", ""]);
+exports.push([module.i, ".boo-footer-bg[data-v-abfbddf2] {\n  padding: 20px;\n}\nul[data-v-abfbddf2] {\n  list-style: none;\n}\n.card ul[data-v-abfbddf2] {\n  padding: 0;\n}\n.card h3[data-v-abfbddf2] {\n  font-weight: bold;\n  text-align: center;\n  font-size: 1.55rem;\n}\n.card li[data-v-abfbddf2] {\n  margin: 4px 0;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -2645,7 +2714,26 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".boo-jumbo[data-v-5e449999] {\n  height: 30rem;\n}", ""]);
+exports.push([module.i, ".boo-jumbo[data-v-5e449999] {\n  padding: 40px;\n}\n.boo-jumbo *[data-v-5e449999] {\n  padding: 10px 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".navbar[data-v-485090b2] {\n  padding: 0;\n  background-color: #FFEEAD;\n}\nimg[data-v-485090b2] {\n  width: 70px;\n}\nul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
 
 // exports
 
@@ -2664,7 +2752,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".boo-big[data-v-25b84100] {\n  height: 30rem;\n}\n.boo-box[data-v-25b84100] {\n  height: 25rem;\n  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;\n}", ""]);
+exports.push([module.i, ".boo-big[data-v-25b84100] {\n  padding: 40px 0;\n  margin: 10px 0;\n}\n.boo-big h1[data-v-25b84100] {\n  padding: 0 0 0px 0;\n}\n.boo-big *[data-v-25b84100] {\n  margin: 10px 10px;\n}\n.boo-big .btn[data-v-25b84100] {\n  margin-top: 10px;\n}", ""]);
 
 // exports
 
@@ -3220,6 +3308,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./JumboComponent.vue?vue&type=style&index=0&id=5e449999&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/JumboComponent.vue?vue&type=style&index=0&id=5e449999&scoped=true&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -19273,7 +19391,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NavbarComponent_vue_vue_type_template_id_485090b2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavbarComponent.vue?vue&type=template&id=485090b2&scoped=true& */ "./resources/js/components/NavbarComponent.vue?vue&type=template&id=485090b2&scoped=true&");
 /* harmony import */ var _NavbarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavbarComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/NavbarComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _NavbarComponent_vue_vue_type_style_index_0_id_485090b2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss& */ "./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -19281,7 +19401,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _NavbarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _NavbarComponent_vue_vue_type_template_id_485090b2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _NavbarComponent_vue_vue_type_template_id_485090b2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -19310,6 +19430,22 @@ component.options.__file = "resources/js/components/NavbarComponent.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./NavbarComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NavbarComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss& ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_style_index_0_id_485090b2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NavbarComponent.vue?vue&type=style&index=0&id=485090b2&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_style_index_0_id_485090b2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_style_index_0_id_485090b2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_style_index_0_id_485090b2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_NavbarComponent_vue_vue_type_style_index_0_id_485090b2_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -19871,8 +20007,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
 module.exports = __webpack_require__(/*! C:\Users\raimo\Desktop\Boolean\Corso\ProgettoFinale\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> homepage
 
 
 /***/ })

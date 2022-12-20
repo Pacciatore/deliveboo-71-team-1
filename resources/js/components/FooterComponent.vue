@@ -1,70 +1,90 @@
 <template>
-    <div class="bg-dark boo-footer-bg">
-        <footer class="d-flex justify-content-around container">
+    <div class="container-fluid bg-dark boo-footer-bg">
+        <div class="container-xxl">
+            <footer class="row justify-content-around gx-3 gy-3">
 
-            <div class="card">
-                <h3>Scopri Deliveboo</h3>
-                <ul>
-                    <li>Investitori</li>
-                    <li>Chi siamo</li>
-                    <li>Ristoranti</li>
-                    <li>Altro</li>
-                    <li>Pressroom</li>
-                    <li>Programmazione</li>
-                    <li>Design</li>
-                    <li>Lavora con noi</li>
-                    <li>Diventa nostro partner</li>
-                </ul>
-            </div>
+                <div class="card col-12 col-sm-10 col-md-5 col-lg-2 my-2">
+                    <h3>Scopri Deliveboo</h3>
+                    <ul>
+                        <li>Investitori</li>
+                        <li>Chi siamo</li>
+                        <li>Ristoranti</li>
+                        <li>Altro</li>
+                        <li>Pressroom</li>
+                        <li>Programmazione</li>
+                        <li>Design</li>
+                        <li>Lavora con noi</li>
+                        <li>Diventa nostro partner</li>
+                    </ul>
+                </div>
 
-            <div class="card">
-                <h3>Note legali</h3>
-                <ul>
-                    <li>Termini e condizioni</li>
-                    <li>Informativa sulla privacy</li>
-                    <li>Cookies</li>
-                </ul>
-            </div>
+                <div class="card col-12 col-sm-10 col-md-5 col-lg-2 my-2">
+                    <h3>Note legali</h3>
+                    <ul>
+                        <li>Termini e condizioni</li>
+                        <li>Informativa sulla privacy</li>
+                        <li>Cookies</li>
+                    </ul>
+                </div>
 
-            <div class="card">
-                <h3>Aiuto</h3>
-                <ul>
-                    <li>Contatti</li>
-                    <li>FAQ</li>
-                    <li>Tipi di cucina</li>
-                </ul>
-            </div>
+                <div class="card col-12 col-sm-10 col-md-5 col-lg-2 my-2">
+                    <h3>Aiuto</h3>
+                    <ul>
+                        <li>Contatti</li>
+                        <li>FAQ</li>
+                        <li>Tipi di cucina</li>
+                    </ul>
+                </div>
 
-            <div class="card">
-                <h3>Porta Deliveboo con te</h3>
-                <button type="button" class="btn btn-dark">Collegamento App Store</button>
-                <button type="button" class="btn btn-dark">Collegamento Google Play</button>
-            </div>
+                <div class="card col-12 col-sm-10 col-md-5 col-lg-2 my-2">
+                    <h3>Porta Deliveboo con te</h3>
+                    <button type="button" class="btn btn-dark m-3">Collegamento App Store</button>
+                    <button type="button" class="btn btn-dark m-3">Collegamento Google Play</button>
+                </div>
 
-        </footer>
+            </footer>
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+export default {
+    mounted() {
+        console.log('Component mounted.')
     }
+}
 </script>
 
 
 
 <style scoped lang="scss">
-.boo-footer-bg{
-    height: 25rem;
+.boo-footer-bg {
+    padding: 20px;
 }
 
-ul{
+ul {
     list-style: none;
 
 }
 
+.card {
 
 
+    ul {
+        padding: 0;
+    }
+
+    h3 {
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.55rem;
+
+    }
+
+    li {
+        margin: 4px 0;
+        text-align: center;
+
+    }
+}
 </style>
