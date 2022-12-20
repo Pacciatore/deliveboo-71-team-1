@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="boo-jumbo bg-dark text-white d-flex flex-column align-items-center justify-content-around">
+        <div class="boo-jumbo bg-dark text-white text-center">
 
             <h1>I piatti dei ristoranti che ami e la spesa, a domicilio</h1>
             <p>Trova i ristoranti che più ti piacciono nella tua zona!</p>
@@ -31,6 +31,10 @@ export default {
 
 <style scoped lang="scss">
 .boo-jumbo {
-    height: 30rem;
+    padding: 40px;
+
+    * {
+        padding: 10px 0;
+    }
 }
 </style>
