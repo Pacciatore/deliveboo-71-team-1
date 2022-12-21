@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Order;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -16,7 +18,10 @@ class OrderController extends Controller
     public function index()
     {
         //
-        $orders = Order::all();
+        // $orders = Order::all();
+        $orders = Order::whereHas('plates', function (Builder $query) {
+            $query->where('user_id', '=', Auth::id() );
+        })->with('plates')->get();
         return view('admin.orders.index', compact('orders'));
     }
 

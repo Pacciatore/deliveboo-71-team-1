@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div>
+    <div class="container clearfix">
+        <h1>EDIT</h1>
         <form action="{{ route('admin.orders.update', ['order' => $order->id]) }}" method="POST">
             @csrf
             @method('PATCH')
 
-            <div>EDIT</div>
             <div>
                 <label for="ui_name">Inserisci il tuo nome:</label>
                 <input type="text" name="ui_name" value="{{ old('order', $order->ui_name) }}">
