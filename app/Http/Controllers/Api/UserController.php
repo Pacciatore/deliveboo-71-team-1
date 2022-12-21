@@ -58,10 +58,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //
-        $user = User::where('id', $id)->with('types')->first();
+        $user = User::where('slug', $slug)->with('types')->first();
         $data = [
             'results' => $user,
             'success' => isset($user)

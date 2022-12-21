@@ -2022,7 +2022,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var http__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(http__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'RestaurantdetailsComponent'
+  name: 'RestaurantdetailsComponent',
+  props: {
+    restaurant: Object
+  }
 });
 
 /***/ }),
@@ -2180,6 +2183,39 @@ __webpack_require__.r(__webpack_exports__);
     NavbarComponent: _components_NavbarComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     RestaurantdetailsComponent: _js_components_RestaurantdetailsComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     PlatesrestaurantComponent: _js_components_PlatesrestaurantComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      loading: true,
+      restaurant: {}
+    };
+  },
+  mounted: function mounted() {
+    var slug = this.$route.params.slug;
+    this.loadPage('api/restaurants/' + slug);
+  },
+  methods: {
+    loadPage: function loadPage(url) {
+      var _this = this;
+      // console.log(url);
+
+      axios.get(url).then(function (_ref) {
+        var data = _ref.data;
+        if (data.success) {
+          // console.log('data', data)
+          _this.restaurant = data.results;
+          // console.log(this.restaurant)
+        } else {
+          //  this.errorMessage = data.error;
+          _this.$router.push({
+            name: 'NotFound'
+          });
+        }
+        _this.loading = false;
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    }
   }
 });
 
@@ -2599,14 +2635,20 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
+  return _c("div", {
+    staticClass: "details d-flex container-lg align-items-center flex-wrap py-5"
+  }, [_c("hr"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6 col-12"
+  }, [_c("h1", [_vm._v(_vm._s(_vm.restaurant.activity_name))]), _vm._v(" "), _c("div", {
+    staticClass: "types"
+  }, _vm._l(_vm.restaurant.types, function (type) {
+    return _c("p", [_vm._v(_vm._s(type.name))]);
+  }), 0), _vm._v(" "), _c("p", [_vm._v("Posizione")])]), _vm._v(" "), _c("hr")]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "details d-flex container-lg align-items-center flex-wrap py-5"
-  }, [_c("hr"), _vm._v(" "), _c("div", {
     staticClass: "col-lg-6 col-12"
   }, [_c("img", {
     staticClass: "img-fluid",
@@ -2614,9 +2656,7 @@ var staticRenderFns = [function () {
       src: "#",
       alt: "Immagine logo ristorante"
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-lg-6 col-12"
-  }, [_c("h1", [_vm._v("Nome ristorante")]), _vm._v(" "), _c("p", [_vm._v("Categoria")]), _vm._v(" "), _c("p", [_vm._v("Posizione")])]), _vm._v(" "), _c("hr")]);
+  })]);
 }];
 render._withStripped = true;
 
@@ -2703,7 +2743,11 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", [_c("NavbarComponent"), _vm._v(" "), _c("div", {
     staticClass: "p-5"
-  }), _vm._v(" "), _c("restaurantdetails-component"), _vm._v(" "), _c("platesrestaurant-component")], 1);
+  }), _vm._v(" "), _c("RestaurantdetailsComponent", {
+    attrs: {
+      restaurant: _vm.restaurant
+    }
+  }), _vm._v(" "), _c("platesrestaurant-component")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -9478,7 +9522,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.details[data-v-380640c3]{\r\n    margin-top: 50px;\n}\r\n", ""]);
+exports.push([module.i, "\n.details[data-v-380640c3] {\n    margin-top: 50px;\n}\n", ""]);
 
 // exports
 
@@ -63471,9 +63515,15 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/',
     name: 'home',
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: '/restaurant',
-    name: 'restaurant',
+  },
+  // {
+  //     path: '/restaurant',
+  //     name: 'restaurant',
+  //     component: Restaurant
+  // },
+  {
+    path: "/restaurant/:slug",
+    name: "restaurant",
     component: _pages_Restaurant_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/404',
