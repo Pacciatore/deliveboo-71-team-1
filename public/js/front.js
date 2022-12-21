@@ -2612,7 +2612,7 @@ var render = function render() {
   }, _vm._l(_vm.filter.users, function (filteredRestaurant) {
     return _c("div", {
       staticClass: "card p-3 col-4"
-    }, [_c("h4", [_vm._v(_vm._s(filteredRestaurant.name))]), _vm._v(" "), _c("div", {
+    }, [_c("h4", [_vm._v(_vm._s(filteredRestaurant.activity_name))]), _vm._v(" "), _c("div", {
       staticClass: "img-container align-self-center"
     }, [_c("img", {
       staticClass: "img-fluid",
@@ -2628,7 +2628,7 @@ var render = function render() {
   }, _vm._l(_vm.restaurants.data, function (restaurant) {
     return _c("div", {
       staticClass: "card p-3 col-4"
-    }, [_c("h4", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("div", {
+    }, [_c("h4", [_vm._v(_vm._s(restaurant.activity_name))]), _vm._v(" "), _c("div", {
       staticClass: "img-container align-self-center"
     }, [_c("img", {
       staticClass: "img-fluid",
