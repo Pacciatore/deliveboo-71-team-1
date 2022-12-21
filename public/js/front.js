@@ -2339,7 +2339,7 @@ var render = function render() {
       id: "navbarComponent"
     }
   }, [_c("nav", {
-    staticClass: "navbar navbar-expand-lg navbar-light"
+    staticClass: "navbar navbar-expand-lg navbar-light shadow-sm"
   }, [_c("div", {
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
@@ -7102,7 +7102,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#navbarComponent nav[data-v-485090b2] {\n  position: fixed;\n  width: 100%;\n}\n#navbarComponent nav .navbar[data-v-485090b2] {\n  background-color: #FFEEAD;\n}\n#navbarComponent nav img[data-v-485090b2] {\n  width: 70px;\n}\n#navbarComponent nav ul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
+exports.push([module.i, "#navbarComponent nav[data-v-485090b2] {\n  position: fixed;\n  width: 100%;\n  z-index: 100;\n}\n#navbarComponent nav .navbar[data-v-485090b2] {\n  background-color: #FFEEAD;\n}\n#navbarComponent nav img[data-v-485090b2] {\n  width: 70px;\n}\n#navbarComponent nav ul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
 
 // exports
 

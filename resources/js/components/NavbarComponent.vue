@@ -2,7 +2,7 @@
     <div id="navbarComponent">
 
         <!-- 1 -->
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container">
                 <a href="/" class="navbar-brand" style="max-width: 7.33333333%">
                     <img src="/assets/DELIVEBOO.png" alt="">
@@ -85,6 +85,7 @@ export default {
 
         position: fixed;
         width: 100%;
+        z-index: 100;
 
         .navbar {
             background-color: #FFEEAD;
