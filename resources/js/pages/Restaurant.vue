@@ -1,27 +1,31 @@
 <template>
     <div>
-        <navbarrestaurant-component></navbarrestaurant-component>
+
+        <NavbarComponent />
+        <!-- Per distanziare la fixed nav -->
+        <div class="p-5"></div>
+
         <restaurantdetails-component></restaurantdetails-component>
         <platesrestaurant-component></platesrestaurant-component>
     </div>
 </template>
 
 <script>
+import NavbarComponent from '../components/NavbarComponent.vue';
 
-import NavbarrestaurantComponent from '../../js/components/NavbarrestaurantComponent.vue'
 import RestaurantdetailsComponent from '../../js/components/RestaurantdetailsComponent.vue'
 import PlatesrestaurantComponent from '../../js/components/PlatesrestaurantComponent.vue'
 
 
 export default {
-  name: 'Restaurant',
-  components:{
-    NavbarrestaurantComponent,
-    RestaurantdetailsComponent,
-    PlatesrestaurantComponent
+    name: 'Restaurant',
+    components: {
+        NavbarComponent,
+        RestaurantdetailsComponent,
+        PlatesrestaurantComponent
 
 
-  }
+    }
 }
 </script>
 
