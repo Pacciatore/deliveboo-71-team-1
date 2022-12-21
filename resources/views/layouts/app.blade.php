@@ -27,7 +27,7 @@
             <div class="container">
 
                 {{-- Company Logo --}}
-                <a href="/" class="navbar-brand" style="max-width: 7.33333333%">
+                <a href="/" class="navbar-brand" style="max-width: 70px">
                     <img class="img-fluid" src="/assets/DELIVEBOO.png" alt="deliveboo-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"

@@ -2,6 +2,9 @@
     <div>
 
         <NavbarComponent />
+        <!-- Per distanziare la fixed nav -->
+        <div class="p-5"></div>
+
         <JumboComponent />
         <SearchComponent @search="search" :types="typesList" />
         <SearchResponseComponent :filter="types" :restaurants="restaurants" />

@@ -2334,16 +2334,15 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("nav", {
+  return _c("div", {
+    attrs: {
+      id: "navbarComponent"
+    }
+  }, [_c("nav", {
     staticClass: "navbar navbar-expand-lg navbar-light"
   }, [_c("div", {
     staticClass: "container"
-  }, [_c("img", {
-    attrs: {
-      src: "/assets/DELIVEBOO.png",
-      alt: ""
-    }
-  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse",
     attrs: {
       id: "navbarSupportedContent"
@@ -2380,9 +2379,26 @@ var render = function render() {
     attrs: {
       href: "/login"
     }
-  }, [_vm._v("\n                                Accedi o registrati\n                            ")])], 1)])])])])])]);
+  }, [_vm._v("\n                                Profilo ristoratore\n                            ")])], 1)])])])])])]);
 };
 var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", {
+    staticClass: "navbar-brand",
+    staticStyle: {
+      "max-width": "7.33333333%"
+    },
+    attrs: {
+      href: "/"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: "/assets/DELIVEBOO.png",
+      alt: ""
+    }
+  })]);
+}, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("button", {
@@ -2464,7 +2480,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("NavbarComponent"), _vm._v(" "), _c("JumboComponent"), _vm._v(" "), _c("SearchComponent", {
+  return _c("div", [_c("NavbarComponent"), _vm._v(" "), _c("div", {
+    staticClass: "p-5"
+  }), _vm._v(" "), _c("JumboComponent"), _vm._v(" "), _c("SearchComponent", {
     attrs: {
       types: _vm.typesList
     },
@@ -7083,7 +7101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navbar[data-v-485090b2] {\n  background-color: #FFEEAD;\n}\nimg[data-v-485090b2] {\n  width: 70px;\n}\nul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
+exports.push([module.i, "#navbarComponent nav[data-v-485090b2] {\n  position: fixed;\n  width: 100%;\n}\n#navbarComponent nav .navbar[data-v-485090b2] {\n  background-color: #FFEEAD;\n}\n#navbarComponent nav img[data-v-485090b2] {\n  width: 70px;\n}\n#navbarComponent nav ul li[data-v-485090b2] {\n  padding: 0px 10px;\n}", ""]);
 
 // exports
 

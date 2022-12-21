@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div id="navbarComponent">
 
         <!-- 1 -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <img src="/assets/DELIVEBOO.png" alt="">
-
+                <a href="/" class="navbar-brand" style="max-width: 7.33333333%">
+                    <img src="/assets/DELIVEBOO.png" alt="">
+                </a>
                 <!-- Bottone burger menu -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -49,7 +50,7 @@
                                 <router-link to="/" class="dropdown-item">Home</router-link>
 
                                 <a class="dropdown-item" href="/login">
-                                    Accedi o registrati
+                                    Profilo ristoratore
                                 </a>
 
                             </div>
@@ -79,17 +80,25 @@ export default {
 <style scoped lang="scss">
 @import '../../sass/_variables.scss';
 
-.navbar {
-    background-color: #FFEEAD;
-}
+#navbarComponent {
+    nav {
 
-img {
-    width: 70px;
-}
+        position: fixed;
+        width: 100%;
 
-ul {
-    li {
-        padding: 0px 10px;
+        .navbar {
+            background-color: #FFEEAD;
+        }
+
+        img {
+            width: 70px;
+        }
+
+        ul {
+            li {
+                padding: 0px 10px;
+            }
+        }
     }
 }
 </style>
