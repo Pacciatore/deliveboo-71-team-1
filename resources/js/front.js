@@ -7,7 +7,7 @@
 // import router from './router'; Da decommentare quando implementeremo il routing
 
 
-// require('./bootstrap');
+require('./bootstrap');
 
 import router from './router';
 

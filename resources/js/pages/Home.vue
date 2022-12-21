@@ -2,6 +2,9 @@
     <div>
 
         <NavbarComponent />
+        <!-- Per distanziare la fixed nav -->
+        <div class="p-5"></div>
+
         <JumboComponent />
         <SearchComponent @search="search" :types="typesList" />
         <SearchResponseComponent :filter="types" :restaurants="restaurants" />
@@ -65,6 +68,7 @@ export default {
                 .then((response) => {
                     this.loading = false;
                     this.types = this.getDataFromApiResponse(response);
+                    console.log('types filtrati(?)', this.types);
                 })
                 .catch((e) => {
                     this.loading = false;
