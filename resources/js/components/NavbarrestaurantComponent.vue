@@ -1,37 +1,37 @@
 <template>
-    <div>
-    <nav class="navbar bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="https://picsum.photos/200" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <div class="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  d-flex align-items-center">
+        <a class="navbar-brand" href="/home"><img src="#" alt="logo Deliverboo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Deliverboo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">Menu</button>
-            </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <button>Registrati o Accedi</button>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">FAQ</a>
-                    </li>
-                </ul>
-                <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a href="/login"><button >Registrati o Accedi</button></a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Menu
+                </button>
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Deliverboo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                      <a href="/login"><button type="button" class="btn btn-secondary" data-dismiss="modal">Accedi o registrati</button></a>
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
-    </nav>
-
+        </nav>
     </div>
 </template>
 
