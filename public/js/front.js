@@ -2312,7 +2312,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_c("div", {
-    staticClass: "boo-jumbo bg-dark text-white text-center"
+    staticClass: "boo-jumbo text-center"
   }, [_c("h1", [_vm._v("I piatti dei ristoranti che ami e la spesa, a domicilio")]), _vm._v(" "), _c("p", [_vm._v("Trova i ristoranti che più ti piacciono nella tua zona!")]), _vm._v(" "), _c("p", [_vm._v("Accedi per visualizzare i tuoi indirizzi recenti")])])]);
 }];
 render._withStripped = true;
@@ -7082,7 +7082,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".boo-jumbo[data-v-5e449999] {\n  padding: 40px;\n}\n.boo-jumbo *[data-v-5e449999] {\n  padding: 10px 0;\n}", ""]);
+exports.push([module.i, ".boo-jumbo[data-v-5e449999] {\n  padding: 40px;\n  background-color: #96CEB4;\n  color: #464343;\n}\n.boo-jumbo *[data-v-5e449999] {\n  padding: 10px 0;\n}", ""]);
 
 // exports
 
