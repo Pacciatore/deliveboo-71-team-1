@@ -2547,14 +2547,15 @@ var render = function render() {
   return _c("div", {
     staticClass: "container py-2"
   }, [_c("div", {
-    staticClass: "filter-selection"
-  }, [_c("span", [_vm._v("Selezione tipologia di ristorante: ")]), _vm._v(" "), _c("select", {
+    staticClass: "filter-selection py-3"
+  }, [_c("label", [_vm._v("Selezione tipologia di ristorante: ")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: _vm.typesFilter,
       expression: "typesFilter"
     }],
+    staticClass: "custom-select",
     attrs: {
       name: "types"
     },

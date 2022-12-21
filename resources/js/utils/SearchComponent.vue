@@ -1,11 +1,11 @@
 <template>
     <div class="container py-2">
 
-        <div class="filter-selection">
+        <div class="filter-selection py-3">
 
-            <span>Selezione tipologia di ristorante: </span>
+            <label>Selezione tipologia di ristorante: </label>
 
-            <select name="types" v-model="typesFilter" @change="getTypesFilter()">
+            <select class="custom-select" name="types" v-model="typesFilter" @change="getTypesFilter()">
                 <option value="" selected>All</option>
                 <option v-for="type in types.data" :value="type.name">
                     {{ type.name }}
