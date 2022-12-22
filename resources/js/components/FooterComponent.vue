@@ -36,10 +36,19 @@
                     </ul>
                 </div>
 
-                <div class="card col-12 col-sm-10 col-md-5 col-lg-2 my-2">
+                <div class="card col-12 col-sm-10 col-md-5 col-lg-2 my-2 text-center">
                     <h3>Porta Deliveboo con te</h3>
-                    <button type="button" class="btn btn-dark m-3">Collegamento App Store</button>
-                    <button type="button" class="btn btn-dark m-3">Collegamento Google Play</button>
+                    <div>
+                        <a href="https://www.apple.com/it/app-store/" class="btn btn-dark">
+                            Collegamento App Store
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://play.google.com/store/games?hl=it&pli=1" class="btn btn-dark">
+                            Collegamento Google Play
+                        </a>
+
+                    </div>
                 </div>
 
             </footer>
@@ -85,6 +94,10 @@ ul {
         margin: 4px 0;
         text-align: center;
 
+    }
+
+    a {
+        margin: 6px 0;
     }
 }
 </style>

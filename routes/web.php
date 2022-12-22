@@ -29,11 +29,29 @@ Route::middleware('auth')
         Route::redirect('/', 'admin/profile');
         Route::resource('profile', 'ProfileController')->only('index', 'edit', 'update', 'destroy');
         Route::resource('plates', 'PlateController');
-        Route::resource('orders', 'OrderController');
+        Route::resource('orders', 'OrderController')->only('index', 'edit', 'update', 'destroy');
     });
+
+
+    
+Route::resource('orders', 'OrderController')->only('create','store'); 
+
+Route::get('menu', 'PlatesController@index')->name('menu');
+
+Route::get('cart', 'PlatesController@cart')->name('cart');
+
+Route::get('add-to-cart/{id}', 'PlatesController@addToCart');
+
+Route::patch('update-cart', 'PlatesController@update');
+
+Route::delete('remove-from-cart', 'PlatesController@remove');
 
 // Rotta di fallback
 Route::get('{any?}', function () {
     return view('guest.home');
 })->where('any', '.*');
+
+
+
+
 
