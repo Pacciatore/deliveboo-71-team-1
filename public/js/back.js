@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -37354,14 +37354,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./resources/js/back.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\js\back.js */"./resources/js/back.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/js/back.js */"./resources/js/back.js");
 
 
 /***/ })

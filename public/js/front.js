@@ -2377,18 +2377,18 @@ var staticRenderFns = [function () {
   }, [_c("h3", [_vm._v("Note legali")]), _vm._v(" "), _c("ul", [_c("li", [_vm._v("Termini e condizioni")]), _vm._v(" "), _c("li", [_vm._v("Informativa sulla privacy")]), _vm._v(" "), _c("li", [_vm._v("Cookies")])])]), _vm._v(" "), _c("div", {
     staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2"
   }, [_c("h3", [_vm._v("Aiuto")]), _vm._v(" "), _c("ul", [_c("li", [_vm._v("Contatti")]), _vm._v(" "), _c("li", [_vm._v("FAQ")]), _vm._v(" "), _c("li", [_vm._v("Tipi di cucina")])])]), _vm._v(" "), _c("div", {
-    staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2"
-  }, [_c("h3", [_vm._v("Porta Deliveboo con te")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-dark m-3",
+    staticClass: "card col-12 col-sm-10 col-md-5 col-lg-2 my-2 text-center"
+  }, [_c("h3", [_vm._v("Porta Deliveboo con te")]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "btn btn-dark",
     attrs: {
-      type: "button"
+      href: "https://www.apple.com/it/app-store/"
     }
-  }, [_vm._v("Collegamento App Store")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-dark m-3",
+  }, [_vm._v("\n                        Collegamento App Store\n                    ")])]), _vm._v(" "), _c("div", [_c("a", {
+    staticClass: "btn btn-dark",
     attrs: {
-      type: "button"
+      href: "https://play.google.com/store/games?hl=it&pli=1"
     }
-  }, [_vm._v("Collegamento Google Play")])])])])]);
+  }, [_vm._v("\n                        Collegamento Google Play\n                    ")])])])])])]);
 }];
 render._withStripped = true;
 
@@ -9446,7 +9446,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".boo-footer-bg[data-v-abfbddf2] {\n  padding: 20px;\n}\nul[data-v-abfbddf2] {\n  list-style: none;\n}\n.card ul[data-v-abfbddf2] {\n  padding: 0;\n}\n.card h3[data-v-abfbddf2] {\n  font-weight: bold;\n  text-align: center;\n  font-size: 1.55rem;\n}\n.card li[data-v-abfbddf2] {\n  margin: 4px 0;\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".boo-footer-bg[data-v-abfbddf2] {\n  padding: 20px;\n}\nul[data-v-abfbddf2] {\n  list-style: none;\n}\n.card ul[data-v-abfbddf2] {\n  padding: 0;\n}\n.card h3[data-v-abfbddf2] {\n  font-weight: bold;\n  text-align: center;\n  font-size: 1.55rem;\n}\n.card li[data-v-abfbddf2] {\n  margin: 4px 0;\n  text-align: center;\n}\n.card a[data-v-abfbddf2] {\n  margin: 6px 0;\n}", ""]);
 
 // exports
 
@@ -42311,7 +42311,7 @@ util.inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inh
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(/*! util */ 2);
+var debugUtil = __webpack_require__(/*! util */ 1);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -44200,7 +44200,7 @@ Writable.prototype._destroy = function (err, cb) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var util = __webpack_require__(/*! util */ 3);
+var util = __webpack_require__(/*! util */ 2);
 
 function copyBuffer(src, target, offset) {
   src.copy(target, offset);
@@ -63761,13 +63761,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\js\front.js */"./resources/js/front.js");
-module.exports = __webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercitazioni\PROGETTO FINALE\deliveboo-71-team-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/deliveboo-71-team-1/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
@@ -63778,7 +63778,7 @@ module.exports = __webpack_require__(/*! D:\Corsi\Corso Boolean\Lezioni\Esercita
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
