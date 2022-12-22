@@ -11,6 +11,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PlaterestaurantComponent',
+  props: {
+    plates: Object
+  },
   methods: {
     addCart: function addItemToCart(item) {
       var cart = document.getElementById('cart');
@@ -69,12 +72,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       loading: true,
-      restaurant: {}
+      restaurant: {},
+      plates: {}
     };
   },
   mounted: function mounted() {
     var slug = this.$route.params.slug;
     this.loadPage('api/restaurants/' + slug);
+    this.loadPlates('/api/plates');
   },
   methods: {
     loadPage: function loadPage(url) {
@@ -97,6 +102,20 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         console.log(e);
       });
+    },
+    // Caricamento di tutti i piatti
+    loadPlates: function loadPlates(url) {
+      var _this2 = this;
+      axios.get(url).then(function (_ref2) {
+        var data = _ref2.data;
+        if (data.success) {
+          _this2.plates = data.results;
+          console.log('plates loaded: ', data.results.data);
+        } else {
+          _this2.errorMessage = data.error;
+        }
+        _this2.loading = false;
+      });
     }
   }
 });
@@ -117,7 +136,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_vm._m(0), _vm._v(" "), _c("div", {
+  return _c("div", {
+    staticClass: "container"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "container-fluid"
   }, [_c("div", {
     staticClass: "row"
@@ -125,23 +146,25 @@ var render = function render() {
     staticClass: "col-sm-6 col-12"
   }, [_c("div", {
     staticClass: "card"
-  }, [_c("div", {
-    staticClass: "card-body"
-  }, [_c("h5", {
-    staticClass: "card-title"
-  }, [_vm._v("Nome piatto")]), _vm._v(" "), _c("p", {
-    staticClass: "card-text"
-  }, [_vm._v("Descrizione piatto")]), _vm._v(" "), _c("a", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      href: "#"
-    },
-    on: {
-      click: _vm.addCart
-    }
-  }, [_vm._v("Aggiungi al "), _c("i", {
-    staticClass: "fa-solid fa-cart-shopping"
-  })])])])])])])]);
+  }, _vm._l(_vm.plates.data, function (plate) {
+    return _c("div", {
+      staticClass: "card-body"
+    }, [_c("h5", {
+      staticClass: "card-title"
+    }, [_vm._v(_vm._s(plate.name))]), _vm._v(" "), _c("p", {
+      staticClass: "card-text"
+    }, [_vm._v(_vm._s(plate.description))]), _vm._v(" "), _c("a", {
+      staticClass: "btn btn-primary",
+      attrs: {
+        href: "#"
+      },
+      on: {
+        click: _vm.addCart
+      }
+    }, [_vm._v("Aggiungi al "), _c("i", {
+      staticClass: "fa-solid fa-cart-shopping"
+    })])]);
+  }), 0)])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -217,7 +240,11 @@ var render = function render() {
     attrs: {
       restaurant: _vm.restaurant
     }
-  }), _vm._v(" "), _c("platesrestaurant-component")], 1);
+  }), _vm._v(" "), _c("PlatesrestaurantComponent", {
+    attrs: {
+      plates: _vm.plates
+    }
+  })], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

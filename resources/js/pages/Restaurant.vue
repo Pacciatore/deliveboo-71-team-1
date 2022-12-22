@@ -6,7 +6,7 @@
         <div class="p-5"></div>
 
         <RestaurantdetailsComponent :restaurant="restaurant" />
-        <platesrestaurant-component></platesrestaurant-component>
+        <PlatesrestaurantComponent :plates="plates" />
     </div>
 </template>
 
@@ -28,12 +28,15 @@ export default {
         return {
             loading: true,
             restaurant: {},
+            plates: {},
+
         }
     },
     mounted() {
         const slug = this.$route.params.slug;
 
         this.loadPage('api/restaurants/' + slug);
+        this.loadPlates('/api/plates');
 
     },
     methods: {
@@ -53,7 +56,21 @@ export default {
             }).catch(e => {
                 console.log(e);
             })
-        }
+        },
+
+        // Caricamento di tutti i piatti
+        loadPlates(url) {
+            axios.get(url).then(({ data }) => {
+                if (data.success) {
+                    this.plates = data.results;
+                    console.log('plates loaded: ', data.results.data)
+                } else {
+                    this.errorMessage = data.error;
+                }
+                this.loading = false;
+            });
+        },
+
     }
 
 
