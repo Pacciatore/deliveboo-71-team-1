@@ -3,9 +3,6 @@ import VueRouter from "vue-router";
 
 import Home from './pages/Home.vue';
 
-import Restaurant from './pages/Restaurant.vue';
-
-import NotFound from './pages/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -24,13 +21,13 @@ const router = new VueRouter({
         {
             path: "/restaurant/:slug",
             name: "restaurant",
-            component: Restaurant,
+            component: () => import(/* webpackChunkName: "restaurant" */ './pages/Restaurant.vue'),
         },
         {
             path: '/404',
             alias: '*',
             name: 'notFound',
-            component: NotFound
+            component: () => import(/* webpackChunkName: "notFound" */  './pages/NotFound.vue')
         }
 
     ]
