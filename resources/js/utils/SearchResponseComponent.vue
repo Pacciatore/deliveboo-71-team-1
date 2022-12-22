@@ -5,8 +5,8 @@
         <div v-if="filter.users && filter.users.length != 0">
 
             <div class="d-flex flex-wrap">
-                <div v-for="filteredRestaurant in filter.users" class="card p-3 col-4">
-                    <h4>{{ filteredRestaurant.activity_name }}</h4>
+                <div v-for="filteredRestaurant in filter.users" :key="filteredRestaurant.id" class="card p-3 col-4">
+                    <h4 @click="showRestaurant(filteredRestaurant.slug)">{{ filteredRestaurant.activity_name }}</h4>
                     <div class="img-container align-self-center">
                         <img class="img-fluid"
                             :src="!filteredRestaurant.imgPath ? '/assets/restaurant-default.jpg' : '/storage/' + filteredRestaurant.imgPath"
@@ -26,8 +26,8 @@
         <div v-else>
 
             <div class="d-flex flex-wrap">
-                <div v-for="restaurant in restaurants.data" class="card p-3 col-4">
-                    <h4>{{ restaurant.activity_name }}</h4>
+                <div v-for="restaurant in restaurants.data" :key="restaurant.id" class="card p-3 col-4">
+                    <h4 @click="showRestaurant(restaurant.slug)">{{ restaurant.activity_name }}</h4>
                     <div class="img-container align-self-center">
                         <img class="img-fluid"
                             :src="!restaurant.imgPath ? '/assets/restaurant-default.jpg' : '/storage/' + restaurant.imgPath"
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import { runInContext } from 'vm';
+
 export default {
     name: 'SearchResponseComponent',
     data() {
@@ -61,6 +63,14 @@ export default {
         getUsers() {
             console.log('utenti da filtro', this.filter);
             return this.filter.users;
+        },
+        showRestaurant(slug) {
+            console.log('click ok');
+
+            return this.$router.push({ name: 'restaurant', params: { slug } })
+
+
+
         }
     },
 }

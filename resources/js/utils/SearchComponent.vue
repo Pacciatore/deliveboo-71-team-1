@@ -7,7 +7,7 @@
 
             <select class="custom-select" name="types" v-model="typesFilter" @change="getTypesFilter()">
                 <option value="" selected>All</option>
-                <option v-for="type in types.data" :value="type.name">
+                <option v-for="type in types.data" :key="type.id" :value="type.name">
                     {{ type.name }}
                 </option>
             </select>
