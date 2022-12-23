@@ -194,7 +194,15 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "details d-flex container-lg align-items-center flex-wrap py-5"
-  }, [_c("hr"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("div", {
+    staticClass: "col-lg-6 col-12"
+  }, [_c("img", {
+    staticClass: "img-fluid",
+    attrs: {
+      src: !_vm.restaurant.imgPath ? "/assets/restaurant-default.jpg" : "/storage/" + _vm.restaurant.imgPath,
+      alt: _vm.restaurant.name
+    }
+  })]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-6 col-12"
   }, [_c("h1", [_vm._v(_vm._s(_vm.restaurant.activity_name))]), _vm._v(" "), _c("div", {
     staticClass: "types"
@@ -202,19 +210,7 @@ var render = function render() {
     return _c("p", [_vm._v(_vm._s(type.name))]);
   }), 0), _vm._v(" "), _c("p", [_vm._v("Posizione")])]), _vm._v(" "), _c("hr")]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "col-lg-6 col-12"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "#",
-      alt: "Immagine logo ristorante"
-    }
-  })]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -264,7 +260,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.details[data-v-380640c3] {\r\n    margin-top: 50px;\n}\r\n", ""]);
+exports.push([module.i, "\n.details[data-v-380640c3] {\n    margin-top: 50px;\n}\n", ""]);
 
 // exports
 
