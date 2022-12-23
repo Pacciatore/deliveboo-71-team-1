@@ -264,7 +264,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.details[data-v-380640c3] {\n    margin-top: 50px;\n}\n", ""]);
+exports.push([module.i, "\n.details[data-v-380640c3] {\r\n    margin-top: 50px;\n}\r\n", ""]);
 
 // exports
 
@@ -526,7 +526,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
@@ -537,7 +537,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
