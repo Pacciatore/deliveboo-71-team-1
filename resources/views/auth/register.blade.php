@@ -56,9 +56,9 @@
 
                                 <div class="col-md-6">
                                     @foreach ($types as $type)
-                                        <input type="checkbox" class="form-control @error('types') is-invalid @enderror"
-                                            name="types[]" value="{{ $type->id }}" autofocus>
-                                        <label>{{ $type->name }}</label>
+                                        <input type="checkbox" class=" @error('types') is-invalid @enderror" name="types[]"
+                                            value="{{ $type->id }}" autofocus>
+                                        <label class="mr-3">{{ $type->name }}</label>
                                     @endforeach
 
                                     @error('types')
